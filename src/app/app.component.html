@@ -4,14 +4,17 @@
 </head>
 <body></body>
 
-<!--nav bar-->
 <nav>
-  <ul>
-    <li><a href="#" class="link" routerLink="/series-page">Series</a></li>
-    <li><a href="#" class="link" routerLink="/book-page">Book</a></li>
-    <li><a href="#" class="link">Svelte</a></li>
-    <li><a href="#" class="link">Qwik</a></li>
-    <li><a href="#" class="link">HTMX</a></li>
-  </ul>
+  <input type="checkbox" name="" id="toggle">
+  <label for="toggle"><i class="material-icons">≡</i></label>
+  <div class="menu">
+    <ul>
+      <li><a href="#" class="link" routerLink="/series-page">Series</a></li>
+      <li><a href="#" class="link" routerLink="/book-page">Book</a></li>
+      <li><a href="#" class="link">Svelte</a></li>
+      <li><a href="#" class="link">Qwik</a></li>
+      <li><a href="#" class="link">HTMX</a></li>
+    </ul>
+  </div>
 </nav>
 <router-outlet></router-outlet>
