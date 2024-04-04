@@ -34,6 +34,7 @@ nav label {
     color: white;
     cursor: pointer;
 }
+
 nav #toggle:checked ~ .menu {
     width: 100%;
 }
