@@ -11,4 +11,6 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class AppComponent {
   title = 'routing-app';
+
+  seriesList: string[] = ["Hell Divers", "Legend"];
 }
