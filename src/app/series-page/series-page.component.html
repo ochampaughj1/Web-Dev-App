@@ -1,1 +1,3 @@
-<app-series></app-series>
+<div *ngFor="let currentSeries of seriesList;">
+    <app-series [series]=currentSeries [books]=booksList></app-series>
+</div>

@@ -5,13 +5,21 @@ export class Book {
     Pages: number;
     Summary: string;
     PublishYear: number;
+    Image: string;
 
-    constructor(bookId: number, publisherId: number, title: string, pages: number, summary: string, publishYear: number) {
+    //temp 
+    Author: string;
+
+    constructor(bookId: number, publisherId: number, title: string, pages: number, summary: string, publishYear: number, image: string, author: string) {
         this.BookId =  bookId;
         this.PublisherId = publisherId;
         this.Title = title;
         this.Pages = pages;
         this.Summary = summary;
         this.PublishYear = publishYear;
+        this.Image = image;
+
+        //temp 
+        this.Author = author;
     }
 }

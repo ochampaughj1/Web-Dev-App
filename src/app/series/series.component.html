@@ -1,10 +1,17 @@
 <div class="heading">
-    <h1>{{title}}</h1>
+    <h1>{{series.Title}}</h1>
     <h2>{{authorHeader}}</h2>
 </div>
 
 <!--gallery-->
 <div class="container">
+  <!--passes all but not even
+  <div *ngFor="let currentBook of booksList">
+    <div class="card">
+      <img [src]=currentBook.Image>
+    </div>
+  </div>-->
+
     <!-- binding example for images-->
     <div class="card">
       <img [src]=hellDivers>
