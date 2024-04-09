@@ -50,4 +50,8 @@ export class SeriesComponent implements OnInit{
 
   hellDivers="./assets/images/helldivers1.jpg"
 
+  BookClicked(book: Book) {
+    //replace with dialog box
+    alert("You clicked book: " + book.Title);
+  }
 }

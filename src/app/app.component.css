@@ -1,14 +1,17 @@
 /******** Navbar ********/
 nav {
-    display: block;
+    display: flex;
     background-color:#161b22f2;
     padding: 1.5rem 1.5rem;
     border-bottom: 1px solid #30363d;
+    height: 20px;
+    align-items: center;
 }
 nav ul {
     list-style: none;
-    display: inline-flex;
+    display: flex;
     justify-content: flex-start;
+    align-items: center;
     gap: 1.75rem;
 }
 .link {
@@ -18,13 +21,14 @@ nav ul {
     border-radius: .25rem;
     font-size: 18px;
     font-weight:600;
+    white-space: nowrap;
 }
 .link:hover {
     background-color: #30363d;
 }
 img {
-    height: 1rem;
+    height: 60px;
     width: 3rem;
     display: inline-flex;
-    padding-right: .5rem;
+    padding-top: 3px;
 }
