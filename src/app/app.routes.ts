@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { SeriesPageComponent } from './series-page/series-page.component';
+import { LibraryPageComponent } from './library-page/library-page.component';
 
 export const routes: Routes = [
-    { path: 'series-page', component: SeriesPageComponent },
+    { path: 'library-page', component: LibraryPageComponent },
   ];

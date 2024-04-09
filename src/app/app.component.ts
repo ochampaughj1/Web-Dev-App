@@ -13,7 +13,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 
 export class AppComponent {
-  title = 'routing-app';
+  title = 'web-dev-app';
 
   constructor() {
 

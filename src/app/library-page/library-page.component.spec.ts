@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SeriesPageComponent } from './series-page.component';
+import { SeriesPageComponent } from './library-page.component';
 
 describe('SeriesPageComponent', () => {
   let component: SeriesPageComponent;

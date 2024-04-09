@@ -9,11 +9,11 @@ import { NgFor } from '@angular/common';
   selector: 'app-series-page',
   standalone: true,
   imports: [SeriesComponent, NgFor],
-  templateUrl: './series-page.component.html',
-  styleUrl: './series-page.component.css',
+  templateUrl: './library-page.component.html',
+  styleUrl: './library-page.component.css',
   providers: [DataService]
 })
-export class SeriesPageComponent{
+export class LibraryPageComponent{
   constructor(private dataService: DataService) {
 
   }
