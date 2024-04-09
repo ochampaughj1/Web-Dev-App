@@ -1,0 +1,10 @@
+.book-container {
+    display: flex;
+}
+.card {
+    padding: 1rem;
+}
+.card > img {
+    max-height: 400px;
+    object-fit: cover;
+}

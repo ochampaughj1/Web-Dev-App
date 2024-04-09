@@ -7,44 +7,6 @@
 <div class="container">
   <!--passes all but not even-->
   <div *ngFor="let currentBook of booksList">
-    <div class="card" (click)="BookClicked(currentBook)">
-      <img [src]=currentBook.Image>
-    </div>
+    <app-book [book]=currentBook></app-book>
   </div>
-
-    <!-- binding example for images
-    <div class="card">
-      <img [src]=hellDivers>
-    </div>
-    <!--hard coded images
-    <div class="card">
-      <img src="./assets/images/helldivers2.jpg">
-    </div>
-    <div class="card">
-      <img src="./assets/images/helldivers3.jpg">
-    </div>
-    <div class="card">
-      <img src="./assets/images/helldivers4.jpg">
-    </div>
-    <div class="card">
-      <img src="./assets/images/helldivers5.jpg">
-    </div>
-    <div class="card">
-      <img src="./assets/images/helldivers6.jpg">
-    </div>
-    <div class="card">
-        <img src="./assets/images/helldivers7.jpg">
-    </div>
-    <div class="card">
-        <img src="./assets/images/helldivers8.jpg">
-    </div>
-    <div class="card">
-        <img src="./assets/images/helldivers9.jpg">
-    </div>
-    <div class="card">
-        <img src="./assets/images/helldivers10.jpg">
-    </div>
-    <div class="card">
-        <img src="./assets/images/helldivers11.jpg">
-    </div>-->
-  </div>
+</div>
