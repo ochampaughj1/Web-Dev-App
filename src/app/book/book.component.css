@@ -17,5 +17,5 @@
   }
   .card:hover {
     flex: 2;
-    translate: 0 -20px;
+    translate: 0 -15px;
   }

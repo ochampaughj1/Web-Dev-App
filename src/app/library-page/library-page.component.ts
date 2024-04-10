@@ -14,7 +14,7 @@ import { NgFor } from '@angular/common';
   providers: [DataService]
 })
 export class LibraryPageComponent{
-  constructor(private dataService: DataService) {
+  constructor(public dataService: DataService) {
 
   }
   

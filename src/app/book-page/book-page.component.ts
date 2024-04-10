@@ -17,7 +17,7 @@ export class BookPageComponent implements OnInit{
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      let bookData = JSON.parse(params['data']);
+      let bookData = JSON.parse(atob(params['data']));
       this.book = bookData
     });
   }

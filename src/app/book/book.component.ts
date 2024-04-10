@@ -17,7 +17,7 @@ export class BookComponent {
 
   //navigates to book-page and passes the selected book
   bookClick(): void {
-    let data = JSON.stringify(this.book);
+    let data = btoa(JSON.stringify(this.book));
     let navigationExtras: NavigationExtras = {
       queryParams: {
         data

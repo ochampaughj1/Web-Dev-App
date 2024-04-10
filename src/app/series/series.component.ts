@@ -17,8 +17,7 @@ export class SeriesComponent implements OnInit{
   @Input() books: any;
 
   booksList: Book[] = [];
-  authorHeader: string ='';
-  authorLink: string ='';
+  authorHeader: string = '';
   
   ngOnInit(): void {
     if(this.series.Title == "Hell Divers") {
@@ -28,7 +27,6 @@ export class SeriesComponent implements OnInit{
         }
       }
       this.authorHeader = "Nicholas Sansbury Smith";
-      this.authorLink = "https://nicholassansburysmith.com/";
     }
     else if(this.series.Title == "Legend") {
       for(let i = 0; i < this.books.length; i++) {
@@ -37,7 +35,6 @@ export class SeriesComponent implements OnInit{
         }
       }
       this.authorHeader = "Marie Lu";
-      this.authorLink = "https://marielu.com/books";
     }
     else if(this.series.Title == "BZRK") {
       for(let i = 0; i < this.books.length; i++) {
@@ -46,7 +43,6 @@ export class SeriesComponent implements OnInit{
         }
       }
       this.authorHeader = "Michael Grant";
-      this.authorLink = "https://www.michaelgrantbooks.co.uk/";
     }
   }
 }

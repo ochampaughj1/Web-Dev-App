@@ -26,9 +26,3 @@ nav ul {
 .link:hover {
     background-color: #30363d;
 }
-img {
-    height: 60px;
-    width: 3rem;
-    display: inline-flex;
-    padding-top: 3px;
-}

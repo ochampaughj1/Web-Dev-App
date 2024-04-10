@@ -1,3 +1,14 @@
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">☰</button>
+    <div id="myDropdown" class="dropdown-content">
+      <li>Author</li>
+      <li>Genre</li>
+      <li>Publisher</li>
+      <li>Series:
+        <p>num books</p>
+      </li>
+    </div>
+  </div>
 <div *ngFor="let currentSeries of seriesList;">
     <app-series [series]=currentSeries [books]=booksList></app-series>
 </div>
