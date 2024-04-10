@@ -6,12 +6,12 @@ nav {
     border-bottom: 1px solid #30363d;
     height: 20px;
     align-items: center;
+    justify-content: left;
 }
 nav ul {
     list-style: none;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
     gap: 1.75rem;
 }
 .link {

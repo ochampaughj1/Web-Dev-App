@@ -8,12 +8,10 @@
     border: 1px solid #30363d;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 /* Dropdown button on hover & focus */
-.dropbtn:hover .dropbtn:focus {
-    background-color: #161b22f2;
-}
 .dropbtn:focus {
     border-bottom: none;
     border-radius: 5px 5px 0 0;
