@@ -2,11 +2,13 @@
     <div class="card">
         <img [src]=book.Image>
     </div>
-    <div class="book-info">
+    <div class="book-info-container">
         <h1>{{book.Title}}</h1>
-        <p>Author: {{book.Author}}</p>
-        <p>Pages: {{book.Pages}}</p>
-        <p>Published: {{book.PublishYear}}</p>
-        <p>Summary: {{book.Summary}}</p>
+        <div class="book-info">
+            <p>Author: {{book.Author}}</p>
+            <p>Pages: {{book.Pages}}</p>
+            <p>Published: {{book.PublishYear}}</p>
+            <p>Summary: {{book.Summary}}</p>
+        </div>
     </div>
 </div>

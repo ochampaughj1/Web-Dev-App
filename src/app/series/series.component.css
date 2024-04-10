@@ -1,5 +1,4 @@
 .heading {
-    display: grid;
     text-align: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -7,15 +6,21 @@
   font-size: 50px;
   margin-bottom: 0;
 }
-.heading h2 {
+.link {
   font-size: 18px;
-  margin-top: 5px;
+  text-decoration: none;
+  color:white;
+  font-weight: bold;
 }
-
+.link:hover {
+  text-decoration: underline;
+  color:blue;
+}
 /* gallery */
 .container {
   max-width: 100vw;
   display: flex;
   gap: 1.25rem;
   justify-content: center;
+  margin-top: 1rem;
 }
