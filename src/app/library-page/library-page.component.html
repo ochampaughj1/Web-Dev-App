@@ -1,13 +1,19 @@
 <div class="dropdown">
     <button id="filterBtn" onclick="myFunction()" class="dropbtn">☰</button>
+    <!--Dropdown Contents-->
     <div id="myDropdown" class="dropdown-content">
-      <input type="checkbox">Author
-      <li>Genre</li>
-      <li>Publisher</li>
-      <li>Series:
-        <p>num books</p>
-      </li>
-    </div>
+      <ul>
+        <!--Authors-->
+        <li>Authors:</li>
+        <!--NEED TO ADD FILTER LOGIC-->
+        <div *ngFor="let author of authorList" class="filter-option">
+          <input type="checkbox">{{author}}
+        </div>
+        <!--Genres-->
+        <li>Genre</li>
+        <!--Publishers-->
+        <li>Publisher</li>
+      </ul>
   </div>
 <div *ngFor="let currentSeries of seriesList;">
     <app-series [series]=currentSeries [books]=booksList></app-series>

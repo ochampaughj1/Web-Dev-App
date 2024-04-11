@@ -26,7 +26,7 @@
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
-    position: relative;
+    position: absolute;
     border-radius: 0 5px 5px 5px;
     border: 1px solid #30363d;
     background-color: #161b22f2;
