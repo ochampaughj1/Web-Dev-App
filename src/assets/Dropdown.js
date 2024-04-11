@@ -2,6 +2,7 @@
 toggle between hiding and showing the dropdown content */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById("filterBtn").classList.toggle("btn-border");
   }
   
   // Close the dropdown menu if the user clicks outside of it
@@ -14,6 +15,10 @@ function myFunction() {
         if (openDropdown.classList.contains('show')) {
           openDropdown.classList.remove('show');
         }
+      }
+      var active = document.getElementById("filterBtn");
+      if(active.classList.contains('btn-border')) {
+        active.classList.toggle('btn-border');
       }
     }
   }
