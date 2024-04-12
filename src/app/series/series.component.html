@@ -1,13 +1,15 @@
-<!--Series Information-->
-<div class="heading">
-    <h1>{{series.Title}}</h1>
-    <h2>{{authorHeader}}</h2>
-</div>
-
-<!--gallery-->
 <div class="container">
-  <!--passes all but not even-->
-  <div *ngFor="let currentBook of booksList">
-    <app-book [book]=currentBook></app-book>
+  <!--Series Information-->
+  <div class="heading">
+      <h1>{{series.Title}}</h1>
+      <h2>{{authorHeader}}</h2>
+  </div>
+
+  <!--gallery-->
+  <div class="gallery-container">
+    <!--passes all but not even-->
+    <div *ngFor="let currentBook of booksList">
+      <app-book [book]=currentBook></app-book>
+    </div>
   </div>
 </div>

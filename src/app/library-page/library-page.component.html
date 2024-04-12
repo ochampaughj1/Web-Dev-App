@@ -7,7 +7,7 @@
         <li>Authors:</li>
         <!--NEED TO ADD FILTER LOGIC-->
         <div *ngFor="let author of authorList" class="filter-option">
-          <input type="checkbox">{{author}}
+          <input type="checkbox" (change)="filterbyAuthors(author)">{{author}}
         </div>
         <!--Genres-->
         <li>Genre</li>
@@ -15,6 +15,13 @@
         <li>Publisher</li>
       </ul>
   </div>
-<div *ngFor="let currentSeries of seriesList;">
+<div *ngIf="filterActive == true; else elseBlock">
+  <div *ngFor="let currentSeries of filteredSeriesList;">
     <app-series [series]=currentSeries [books]=booksList></app-series>
+  </div>
 </div>
+<ng-template #elseBlock>
+  <div *ngFor="let currentSeries of seriesList;">
+    <app-series [series]=currentSeries [books]=booksList></app-series>
+  </div>
+</ng-template>

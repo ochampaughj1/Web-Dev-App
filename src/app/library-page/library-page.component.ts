@@ -21,7 +21,9 @@ export class LibraryPageComponent implements OnInit{
   seriesList: Series[] = this.dataService.getSeriesList();
   booksList: Book[] = this.dataService.getBookList();
   authorList: string[] =[];
+
   filteredAuthorList: string[] = [];
+  filteredSeriesList: Series[] = [];
   filterActive: boolean = false;
 
   ngOnInit(): void {
@@ -34,15 +36,63 @@ export class LibraryPageComponent implements OnInit{
     this.authorList = temp;
   }
 
- filterAuthors(author:string) {
-  this.filterActive = true;
+  filterbyAuthors(author:string) {
+    window.scroll(0,0);
+    this.checkFilterActive()
+    this.updateFilteredAuthorsList(author);
+
+    var title;
+    if(author == "Nicholas Sansbury Smith") {
+      title = "Hell Divers";
+      this.updateFilteredSeriesList(title);
+    }
+    else if(author == "Marie Lu") {
+      title = "Legend";
+      this.updateFilteredSeriesList(title);
+    }
+    else if(author == "Michael Grant") {
+      title = "BZRK";
+      this.updateFilteredSeriesList(title);
+    }
+  }
+
+  checkFilterActive() {
+    if(document.querySelectorAll("input:checked").length > 0) {
+      this.filterActive = true;
+    }
+    else {
+      this.filterActive = false;
+    }
+  }
+  
+  updateFilteredAuthorsList(author: string) {
     if(!this.filteredAuthorList.includes(author)) {
       this.filteredAuthorList.push(author);
     }
     else {
       var index = this.filteredAuthorList.indexOf(author);
-      delete this.filteredAuthorList[index];
+      this.filteredAuthorList.splice(index, 1);
     }
- }
+  }
 
+  updateFilteredSeriesList(title: string) {
+    var selectedSeries = this.getSeriesByTitle(title);
+    if(!this.filteredSeriesList.includes(selectedSeries)) {
+      this.filteredSeriesList.push(selectedSeries);
+    }
+    else {
+      var index = this.filteredSeriesList.indexOf(selectedSeries);
+      this.filteredSeriesList.splice(index, 1); 
+    }
+  }
+
+  getSeriesByTitle(title: string): Series {
+    let series: Series = this.seriesList[0];
+    for(let i = 0; i < this.seriesList.length; i++) {
+      if(this.seriesList[i].Title == title) {
+        series = this.seriesList[i];
+      }
+    }
+    return series;
+  }
 }
