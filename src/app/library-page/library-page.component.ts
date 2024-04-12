@@ -18,10 +18,12 @@ export class LibraryPageComponent implements OnInit{
 
   }
   
+  //master lists
   seriesList: Series[] = this.dataService.getSeriesList();
   booksList: Book[] = this.dataService.getBookList();
   authorList: string[] =[];
 
+  //filter items
   filteredAuthorList: string[] = [];
   filteredSeriesList: Series[] = [];
   filterActive: boolean = false;
@@ -36,6 +38,7 @@ export class LibraryPageComponent implements OnInit{
     this.authorList = temp;
   }
 
+  //main filter method
   filterbyAuthors(author:string) {
     window.scroll(0,0);
     this.checkFilterActive()
@@ -56,6 +59,7 @@ export class LibraryPageComponent implements OnInit{
     }
   }
 
+  //checks if any checkboxes are checked
   checkFilterActive() {
     if(document.querySelectorAll("input:checked").length > 0) {
       this.filterActive = true;
@@ -65,6 +69,7 @@ export class LibraryPageComponent implements OnInit{
     }
   }
   
+  //updates the author list off filters
   updateFilteredAuthorsList(author: string) {
     if(!this.filteredAuthorList.includes(author)) {
       this.filteredAuthorList.push(author);
@@ -75,6 +80,7 @@ export class LibraryPageComponent implements OnInit{
     }
   }
 
+  //updates series list off filters
   updateFilteredSeriesList(title: string) {
     var selectedSeries = this.getSeriesByTitle(title);
     if(!this.filteredSeriesList.includes(selectedSeries)) {
@@ -86,6 +92,7 @@ export class LibraryPageComponent implements OnInit{
     }
   }
 
+  //gets title of series based on author
   getSeriesByTitle(title: string): Series {
     let series: Series = this.seriesList[0];
     for(let i = 0; i < this.seriesList.length; i++) {
