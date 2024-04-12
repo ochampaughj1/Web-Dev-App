@@ -7,9 +7,17 @@
   font-size: 50px;
   margin-bottom: 0;
 }
-.heading h2 {
+.link-container {
+  justify-content: center;
+}
+.author-link {
   font-size: 18px;
-  margin-top: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+.author-link:hover {
+  color: aqua;
 }
 
 /* gallery */
@@ -18,5 +26,5 @@
   display: flex;
   gap: 1.25rem;
   justify-content: center;
-  margin-top: 5px;
+  margin-top: 16px;
 }

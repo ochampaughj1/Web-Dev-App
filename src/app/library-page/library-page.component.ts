@@ -14,7 +14,7 @@ import { NgFor, NgIf } from '@angular/common';
   providers: [DataService]
 })
 export class LibraryPageComponent implements OnInit{
-  constructor(public dataService: DataService) {
+  constructor(private dataService: DataService) {
 
   }
   
