@@ -20,6 +20,7 @@ export class SeriesComponent implements OnInit{
 
   }
 
+  //Inputs passed from library-page to display books in the passed in series
   @Input() series: any;
   @Input() books: any;
 
@@ -29,6 +30,7 @@ export class SeriesComponent implements OnInit{
 
   seriesList: Series[] = this.dataService.getSeriesList();
   
+  //Hard coded display data, will be updated when data is established
   ngOnInit(): void {
     if(this.series.Title == "Hell Divers") {
       for(let i = 0; i < this.books.length; i++) {
@@ -56,6 +58,7 @@ export class SeriesComponent implements OnInit{
     }
   }
 
+  //routes to author-page when an author is clicked
   authorClick(author: string) {
     let data = btoa(JSON.stringify(author));
     let navigationExtras: NavigationExtras = {
@@ -66,6 +69,7 @@ export class SeriesComponent implements OnInit{
     this.router.navigate(["author-page"], navigationExtras);
   }
 
+  //gets a series based on an author HARD-CODED
   getSeriesByAuthor(author: string): Series {
     var title = '';
     if(author == "Nicholas Sansbury Smith") {

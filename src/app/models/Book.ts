@@ -9,8 +9,9 @@ export class Book {
 
     //temp 
     Author: string;
+    StandAlone: boolean;
 
-    constructor(bookId: number, publisherId: number, title: string, pages: number, summary: string, publishYear: number, image: string, author: string) {
+    constructor(bookId: number, publisherId: number, title: string, pages: number, summary: string, publishYear: number, image: string, author: string, standAlone: boolean) {
         this.BookId =  bookId;
         this.PublisherId = publisherId;
         this.Title = title;
@@ -21,5 +22,6 @@ export class Book {
 
         //temp 
         this.Author = author;
+        this.StandAlone = standAlone;
     }
 }

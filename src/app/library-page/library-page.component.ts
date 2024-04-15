@@ -18,16 +18,17 @@ export class LibraryPageComponent implements OnInit{
 
   }
   
-  //master lists
+  //master lists for books, authors, and series
   seriesList: Series[] = this.dataService.getSeriesList();
   booksList: Book[] = this.dataService.getBookList();
   authorList: string[] =[];
 
-  //filter items
+  //filter items lists for updating page
   filteredAuthorList: string[] = [];
   filteredSeriesList: Series[] = [];
   filterActive: boolean = false;
 
+  //creates a list of authors from books list
   ngOnInit(): void {
     var temp: string[] = [];
     for(let i = 0; i < this.booksList.length; i++) {
@@ -38,7 +39,7 @@ export class LibraryPageComponent implements OnInit{
     this.authorList = temp;
   }
 
-  //main filter method
+  //filters series list by author filters selected
   filterbyAuthors(author:string) {
     window.scroll(0,0);
     this.checkFilterActive()

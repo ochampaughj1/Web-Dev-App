@@ -15,6 +15,7 @@ export class BookPageComponent implements OnInit{
 
   book: any;
 
+  //gets book data from router link
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       let bookData = JSON.parse(atob(params['data']));

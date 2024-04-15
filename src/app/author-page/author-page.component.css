@@ -1,0 +1,23 @@
+.author-container {
+    display: flex;
+    height: 400px;
+    width: 100%;
+    margin:15px;
+}
+.author-info-container {
+    width: 100%;
+    margin: 0 1rem 0 1rem;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+}
+.author-info-container h1 {
+    background-color:#161b22f2;
+    margin: 0;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid #30363d;
+}
+.author-info {
+    padding-left: 1rem;
+}

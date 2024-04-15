@@ -19,6 +19,7 @@ export class AuthorPageComponent implements OnInit{
     seriesList: Series[] = this.dataService.getSeriesList();
     author = '';
 
+    //gets author data from router link
     ngOnInit(): void {
         this.route.queryParams.subscribe(params => {
             let authorData = JSON.parse(atob(params['data']));

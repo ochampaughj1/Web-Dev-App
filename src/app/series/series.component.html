@@ -2,13 +2,12 @@
   <!--Series Information-->
   <div class="heading">
       <h1>{{series.Title}}</h1>
-      <!--WORKING ON GETTING THIS LINK SET UP-->
+      <!--Link to author-page-->
       <div class="link-container" (click)="authorClick(authorHeader)"><p class="author-link">{{authorHeader}}</p></div>
   </div>
 
-  <!--gallery-->
+  <!--Series Books-->
   <div class="gallery-container">
-    <!--passes all but not even-->
     <div *ngFor="let currentBook of booksList">
       <app-book [book]=currentBook></app-book>
     </div>
