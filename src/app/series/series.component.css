@@ -11,6 +11,7 @@
   justify-content: center;
 }
 .author-link {
+  display: inline-block;
   font-size: 18px;
   font-weight: bold;
   text-decoration: none;
@@ -18,6 +19,7 @@
 }
 .author-link:hover {
   color: aqua;
+  cursor: pointer;
 }
 
 /* gallery */

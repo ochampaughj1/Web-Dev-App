@@ -56,16 +56,14 @@ export class SeriesComponent implements OnInit{
     }
   }
 
-  //navigates to book-page and passes the selected book
-  authorClick(author: string): void {
-    let passSeries: Series = this.getSeriesByAuthor(author);
-    let data = btoa(JSON.stringify(passSeries));
+  authorClick(author: string) {
+    let data = btoa(JSON.stringify(author));
     let navigationExtras: NavigationExtras = {
       queryParams: {
         data
       }
     };
-    this.router.navigate(["book-page"], navigationExtras);
+    this.router.navigate(["author-page"], navigationExtras);
   }
 
   getSeriesByAuthor(author: string): Series {
