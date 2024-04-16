@@ -1,9 +1,9 @@
 export class SeriesBook {
-    BookId: number;
     SeriesId: number;
+    BookId: number;
 
-    constructor(bookId: number, seriesId: number) {
-        this.BookId = bookId;
+    constructor(seriesId: number, bookId: number) {
         this.SeriesId = seriesId;
+        this.BookId = bookId;
     }
 }
