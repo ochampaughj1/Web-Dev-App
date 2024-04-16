@@ -1,4 +1,4 @@
-export class BookGenres {
+export class BookGenre {
     BookId: number; 
     GenreId: number;
 
