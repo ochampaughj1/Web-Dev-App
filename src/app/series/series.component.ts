@@ -5,6 +5,7 @@ import { NgFor } from '@angular/common';
 import { BookComponent } from "../book/book.component";
 import { Router, RouterLink, RouterLinkActive, NavigationExtras } from '@angular/router';
 import { DataService } from '../data/DataService';
+import { Author } from '../models/Author';
 
 @Component({
     selector: 'app-series',
@@ -22,7 +23,6 @@ export class SeriesComponent implements OnInit{
 
   //Inputs passed from library-page to display books in the passed in series
   @Input() series: any;
-  @Input() books: any;
 
   //books list and checking will be updated with Data Service once dummy data established
   booksList: Book[] = [];
@@ -31,31 +31,10 @@ export class SeriesComponent implements OnInit{
   seriesList: Series[] = this.dataService.getSeriesList();
   
   //Hard coded display data, will be updated when data is established
+  //CHANGE TO PASS ACTUAL AUTHORS!!!
   ngOnInit(): void {
-    if(this.series.Title == "Hell Divers") {
-      for(let i = 0; i < this.books.length; i++) {
-        if(this.books[i].PublisherId == 1) {
-          this.booksList.push(this.books[i]);
-        }
-      }
-      this.authorHeader = "Nicholas Sansbury Smith";
-    }
-    else if(this.series.Title == "Legend") {
-      for(let i = 0; i < this.books.length; i++) {
-        if(this.books[i].PublisherId == 2) {
-          this.booksList.push(this.books[i]);
-        }
-      }
-      this.authorHeader = "Marie Lu";
-    }
-    else if(this.series.Title == "BZRK") {
-      for(let i = 0; i < this.books.length; i++) {
-        if(this.books[i].PublisherId == 3) {
-          this.booksList.push(this.books[i]);
-        }
-      }
-      this.authorHeader = "Michael Grant";
-    }
+    this.booksList = this.dataService.getBooksBySeries(this.series);
+    this.authorHeader = this.dataService.getAuthorBySeries(this.series).AuthorName;
   }
 
   //routes to author-page when an author is clicked
@@ -67,31 +46,5 @@ export class SeriesComponent implements OnInit{
       }
     };
     this.router.navigate(["author-page"], navigationExtras);
-  }
-
-  //gets a series based on an author HARD-CODED
-  getSeriesByAuthor(author: string): Series {
-    var title = '';
-    if(author == "Nicholas Sansbury Smith") {
-      title = "Hell Divers";
-    }
-    else if(author == "Marie Lu") {
-      title = "Legend";
-    }
-    else if(author == "Michael Grant") {
-      title = "BZRK";
-    }
-    return this.getSeriesByTitle(title);
-  }
-
-  //gets title of series based on author
-  getSeriesByTitle(title: string): Series {
-    let series: Series = this.seriesList[0];
-    for(let i = 0; i < this.seriesList.length; i++) {
-      if(this.seriesList[i].Title == title) {
-        series = this.seriesList[i];
-      }
-    }
-    return series;
   }
 }

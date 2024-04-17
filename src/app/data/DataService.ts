@@ -338,10 +338,28 @@ export class DataService {
     return this.authorTable;
   }
 
-  //NEEDS CHECKING
+  public getAuthorBySeries(series: Series): Author {
+    let bookId: number = 0;
+    let author: Author = this.authorTable[0];
+    for(let i = 0; i < this.seriesBookTable.length; i++) {
+      if(series.SeriesId == this.seriesBookTable[i].SeriesId) {
+        bookId = this.seriesBookTable[i].BookId;
+        break;
+      }
+    }
+    let authorId = 0;
+    for(let i = 0; i < this.bookAuthorTable.length; i++) {
+      if(bookId == this.bookAuthorTable[i].BookId) {
+        authorId = this.bookAuthorTable[i].AuthorId;
+        break;
+      }
+    }
+    author = this.authorTable[authorId-1];
+    return author;
+  }
+
   public getSeriesByAuthor(author: Author): Series[] {
     let authorSeries: Series[] = [];
-    let seriesIds: number[] = [];
     let bookIds: number[] = [];
     
     //gets book ids based on author
@@ -350,7 +368,6 @@ export class DataService {
         bookIds.push(this.bookAuthorTable[i].BookId);
       }
     }
-    
     //gets series from bookIds
     var currentSeriesId;
     for(let i = 0; i < bookIds.length; i++) {
@@ -360,5 +377,17 @@ export class DataService {
       }
     }
     return authorSeries;
+  }
+
+  public getBooksBySeries(series: Series): Book[] {
+    let seriesBooks: Book[] = [];
+    var currentBookId;
+    for(let i = 0; i < this.seriesBookTable.length; i++) {
+      currentBookId = this.seriesBookTable[i].BookId;
+      if(series.SeriesId == this.seriesBookTable[i].SeriesId) {
+        seriesBooks.push(this.booksTable[currentBookId - 1]);
+      }
+    }
+    return seriesBooks;
   }
 }

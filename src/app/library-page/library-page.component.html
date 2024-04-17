@@ -17,12 +17,12 @@
   <!--Displays list of series based on filters-->
 <div *ngIf="filterActive == true; else elseBlock">
   <div *ngFor="let currentSeries of filteredSeriesList;">
-    <app-series [series]=currentSeries [books]=booksList></app-series>
+    <app-series [series]=currentSeries></app-series>
   </div>
 </div>
 <!--Displays all series-->
 <ng-template #elseBlock>
   <div *ngFor="let currentSeries of seriesList;">
-    <app-series [series]=currentSeries [books]=booksList></app-series>
+    <app-series [series]=currentSeries></app-series>
   </div>
 </ng-template>
