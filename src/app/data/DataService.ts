@@ -287,8 +287,9 @@ export class DataService {
     div1, div2, div3, div4, p1, p2, p3, w1, w2, w3, w4, v1, v2, e1, e2, e3, e4, e5, e6, e7, 
     m1, m2, m3, BrainJack, TomorrowCode
   ];
-  authorTable: Author[] = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a9, a10, a11, a12, a13, a14];
-  bookAuthorTable: BookAuthor[] = [ba1, ba2, ba3, ba4, ba5, ba6, ba7, ba8, ba9, ba10,
+  authorTable: Author[] = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14];
+  bookAuthorTable: BookAuthor[] = [
+    ba1, ba2, ba3, ba4, ba5, ba6, ba7, ba8, ba9, ba10, ba11, ba12, ba13, ba14, ba15, ba16, ba17, ba18, ba19, ba20,
     ba21, ba22, ba23, ba24, ba25, ba26, ba27, ba28, ba29, ba30, ba31, ba32, ba33, ba34, ba35, ba36, ba37, ba38, ba39, ba40,
     ba41, ba42, ba43, ba44, ba45, ba46, ba47, ba48, ba49, ba50, ba51, ba52, ba53, ba54, ba55, ba56, ba57, ba58, ba59, ba60,
     ba61, ba62, ba63, ba64, ba65, ba66, ba67, ba68, ba69, ba70, ba71, ba72, ba73, ba74, ba75, ba76, ba77, ba78, ba79, ba80,
@@ -326,19 +327,38 @@ export class DataService {
   }
 
   public getSeriesList() {
-    return this.seriesList;
-  }
-
-  public setSeriesList(seriesList: Series[]) {
-    this.seriesList = seriesList;
+    return this.seriesTable;
   }
 
   public getBookList() {
-    return this.booksList;
+    return this.booksTable;
   }
 
-  public setBookList(booksList: Book[]) {
-    this.booksList = this.booksList;
+  public getAuthorsList() {
+    return this.authorTable;
   }
-  
+
+  //NEEDS CHECKING
+  public getSeriesByAuthor(author: Author): Series[] {
+    let authorSeries: Series[] = [];
+    let seriesIds: number[] = [];
+    let bookIds: number[] = [];
+    
+    //gets book ids based on author
+    for(let i = 0; i < this.bookAuthorTable.length; i++) {
+      if(author.AuthorId == this.bookAuthorTable[i].AuthorId) {
+        bookIds.push(this.bookAuthorTable[i].BookId);
+      }
+    }
+    
+    //gets series from bookIds
+    var currentSeriesId;
+    for(let i = 0; i < bookIds.length; i++) {
+      currentSeriesId = this.seriesBookTable[bookIds[i] - 1].SeriesId;
+      if(!authorSeries.includes(this.seriesTable[currentSeriesId - 1])) {
+        authorSeries.push(this.seriesTable[currentSeriesId - 1])
+      }
+    }
+    return authorSeries;
+  }
 }

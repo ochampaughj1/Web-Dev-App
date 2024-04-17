@@ -4,6 +4,7 @@ import { DataService } from '../data/DataService';
 import { Series } from '../models/Series';
 import { Book } from '../models/Book';
 import { NgFor, NgIf } from '@angular/common';
+import { Author } from '../models/Author';
 
 @Component({
   selector: 'app-series-page',
@@ -21,43 +22,24 @@ export class LibraryPageComponent implements OnInit{
   //master lists for books, authors, and series
   seriesList: Series[] = this.dataService.getSeriesList();
   booksList: Book[] = this.dataService.getBookList();
-  authorList: string[] =[];
+  authorList: Author[] = this.dataService.getAuthorsList();
 
   //filter items lists for updating page
-  filteredAuthorList: string[] = [];
   filteredSeriesList: Series[] = [];
   filterActive: boolean = false;
 
   //creates a list of authors from books list
   ngOnInit(): void {
-    var temp: string[] = [];
-    for(let i = 0; i < this.booksList.length; i++) {
-      if(!temp.includes(this.booksList[i].Author)) {
-        temp.push(this.booksList[i].Author);
-      }
-    }
-    this.authorList = temp;
+    
   }
 
   //filters series list by author filters selected
-  filterbyAuthors(author:string) {
+  //FILTER DOESNT WORK FOR STANDALONES!!!
+  filterbyAuthors(author:Author) {
     window.scroll(0,0);
-    this.checkFilterActive()
-    this.updateFilteredAuthorsList(author);
-
-    var title;
-    if(author == "Nicholas Sansbury Smith") {
-      title = "Hell Divers";
-      this.updateFilteredSeriesList(title);
-    }
-    else if(author == "Marie Lu") {
-      title = "Legend";
-      this.updateFilteredSeriesList(title);
-    }
-    else if(author == "Michael Grant") {
-      title = "BZRK";
-      this.updateFilteredSeriesList(title);
-    }
+    this.checkFilterActive();
+    var seriesByAuthor = this.dataService.getSeriesByAuthor(author);
+    this.updateFilteredSeriesList(seriesByAuthor);
   }
 
   //checks if any checkboxes are checked
@@ -69,38 +51,17 @@ export class LibraryPageComponent implements OnInit{
       this.filterActive = false;
     }
   }
-  
-  //updates the author list off filters
-  updateFilteredAuthorsList(author: string) {
-    if(!this.filteredAuthorList.includes(author)) {
-      this.filteredAuthorList.push(author);
-    }
-    else {
-      var index = this.filteredAuthorList.indexOf(author);
-      this.filteredAuthorList.splice(index, 1);
-    }
-  }
 
   //updates series list off filters
-  updateFilteredSeriesList(title: string) {
-    var selectedSeries = this.getSeriesByTitle(title);
-    if(!this.filteredSeriesList.includes(selectedSeries)) {
-      this.filteredSeriesList.push(selectedSeries);
-    }
-    else {
-      var index = this.filteredSeriesList.indexOf(selectedSeries);
-      this.filteredSeriesList.splice(index, 1); 
-    }
-  }
-
-  //gets title of series based on author
-  getSeriesByTitle(title: string): Series {
-    let series: Series = this.seriesList[0];
-    for(let i = 0; i < this.seriesList.length; i++) {
-      if(this.seriesList[i].Title == title) {
-        series = this.seriesList[i];
+  updateFilteredSeriesList(series: Series[]) { 
+    for(let i = 0; i < series.length; i++) {
+      if(!this.filteredSeriesList.includes(series[i])) {
+        this.filteredSeriesList.push(series[i]);
+      }
+      else {
+        var index = this.filteredSeriesList.indexOf(series[i]);
+        this.filteredSeriesList.splice(index, 1); 
       }
     }
-    return series;
   }
 }

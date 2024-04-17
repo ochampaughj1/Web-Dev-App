@@ -6,7 +6,7 @@
         <!--Authors-->
         <li>Authors:</li>
         <div *ngFor="let author of authorList" class="filter-option">
-          <input type="checkbox" (change)="filterbyAuthors(author)">{{author}}
+          <input type="checkbox" (change)="filterbyAuthors(author)">{{author.AuthorName}}
         </div>
         <!--Genres-->
         <li>Genre</li>
