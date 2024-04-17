@@ -19,7 +19,7 @@ const genre1 = new Genre(1, "Dystopian");
 const genre2 = new Genre(2, "Apocalyptic");
 const genre3 = new Genre(3, "Sci-Fi");
 const genre4 = new Genre(4, "Thriller");
-const genre6 = new Genre(5, "Fantasy");
+const genre5 = new Genre(5, "Fantasy");
 
 //Authors
 const a1 = new Author(1, "Nicholas Sansbury Smith", "./temp");        
@@ -310,9 +310,15 @@ export class DataService {
     ga241, ga242, ga243, ga244, ga245, ga246, ga247, ga248, ga249, ga250, ga251, ga252, ga253, ga254, ga255, ga256, ga257, ga258, ga259, ga260,
     ga261, ga262, ga263, ga264, ga265, ga266, ga267, ga268, ga269, ga270, ga271, ga272, ga273, ga274
   ];
-  genreTable: Genre[] = [];
+  seriesBookTable: SeriesBook[] = [
+    sb1, sb2, sb3, sb4, sb5, sb6, sb7, sb8, sb9, sb10, sb11, sb12, sb13, sb14, sb15, sb16, sb17, sb18, sb19, sb20,
+    sb21, sb22, sb23, sb24, sb25, sb26, sb27, sb28, sb29, sb30, sb31, sb32, sb33, sb34, sb35, sb36, sb37, sb38, sb39, sb40,
+    sb41, sb42, sb43, sb44, sb45, sb46, sb47, sb48, sb49, sb50, sb51, sb52, sb53, sb54, sb55, sb56, sb57, sb58, sb59, sb60,
+    sb61, sb62, sb63, sb64, sb65, sb66, sb67, sb68, sb69, sb70, sb71, sb72, sb73, sb74, sb75, sb76, sb77, sb78, sb79, sb80,
+    sb81, sb82
+  ];
+  genreTable: Genre[] = [genre1, genre2, genre3, genre4, genre5];
   publisherTable: Publisher[] = [pub1, pub2, pub3, pub4, pub5, pub6, pub7, pub8, pub9, pub10, pub11, pub12, pub13, pub14];
-  seriesBookTable: SeriesBook[] = [];
   
   //public scope: Array<any> | boolean = false;
   constructor() {
