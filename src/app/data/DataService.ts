@@ -1,4 +1,4 @@
-//Publishers (*NEED TO DOUBLE CHECK PUBLISHERS*)
+//Publishers 
 const pub1 = new Publisher(1,"Black Stone Publishing");
 const pub2 = new Publisher(2,"Penguin Group");
 const pub3 = new Publisher(3,"Square Fish");
@@ -20,20 +20,20 @@ const genre4 = new Genre(4, "Thriller");
 const genre5 = new Genre(5, "Fantasy");
 
 //Authors
-const a1 = new Author(1, "Nicholas Sansbury Smith", "./temp");        
-const a2 = new Author(2, "Marie Lu", "./temp");
-const a3 = new Author(3, "Michael Grant", "./temp");
-const a4 = new Author(4, "Alexander Gordon Smith", "./temp");
-const a5 = new Author(5, "Lex Thomas", "./temp");
-const a6 = new Author(6, "Alexandra Bracken", "./temp");
-const a7 = new Author(7, "K.A. Riley", "./temp");
-const a8 = new Author(8, "Veronica Roth", "./temp");
-const a9 = new Author(9, "Dan Wells", "./temp");
-const a10 = new Author(10, "E.G. Michaels", "./temp");
-const a11 = new Author(11, "Robison Wells", "./temp");
-const a12 = new Author(12, "Charlie Higson", "./temp");
-const a13 = new Author(13, "Emmy Laybourne", "./temp");
-const a14 = new Author(14, "Brian Falkner", "./temp");
+const a1 = new Author(1, "Nicholas Sansbury Smith", "https://nicholassansburysmith.com/");        
+const a2 = new Author(2, "Marie Lu", "https://marielu.com/books");
+const a3 = new Author(3, "Michael Grant", "https://www.michaelgrantbooks.co.uk/");
+const a4 = new Author(4, "Alexander Gordon Smith", "https://www.alexandergordonsmith.com/");
+const a5 = new Author(5, "Lex Thomas", "https://lernerbooks.com/contributors/14125");
+const a6 = new Author(6, "Alexandra Bracken", "https://www.alexandrabracken.com/");
+const a7 = new Author(7, "K.A. Riley", "https://karileywrites.org/");
+const a8 = new Author(8, "Veronica Roth", "https://veronicarothbooks.com/");
+const a9 = new Author(9, "Dan Wells", "https://www.thedanwells.com/");
+const a10 = new Author(10, "E.G. Michaels", "https://egmichaels.com/");
+const a11 = new Author(11, "Robison Wells", "https://robisonwells.com/");
+const a12 = new Author(12, "Charlie Higson", "https://www.charliehigson.co.uk/");
+const a13 = new Author(13, "Emmy Laybourne", "https://www.emmylaybourne.com/");
+const a14 = new Author(14, "Brian Falkner", "https://www.brianfalkner.com/");
 
 /********* Connection Tables **************/
 //Hell Divers                       //BookGenres
@@ -335,6 +335,25 @@ export class DataService {
     return this.authorTable;
   }
 
+  public getGenreList() {
+    return this.genreTable;
+  }
+
+  public getPublisherList() {
+    return this.publisherTable;
+  }
+
+  public getBookAuthor(book: Book): Author {
+    let author: any; 
+    for(let i = 0; i < this.bookAuthorTable.length; i++) {
+      if(book.BookId == this.bookAuthorTable[i].BookId) {
+        author = this.authorTable[this.bookAuthorTable[i].AuthorId - 1];
+      }
+    }
+    return author;
+  }
+
+  //returns author of given series
   public getAuthorBySeries(series: Series): Author {
     let bookId: number = 0;
     let author: Author = this.authorTable[0];
@@ -355,6 +374,7 @@ export class DataService {
     return author;
   }
 
+  //returns all series by given author
   public getSeriesByAuthor(author: Author): Series[] {
     let authorSeries: Series[] = [];
     let bookIds: number[] = [];
@@ -365,17 +385,49 @@ export class DataService {
         bookIds.push(this.bookAuthorTable[i].BookId);
       }
     }
+    return this.getSeriesByBooks(bookIds);
+  }
+
+  public getSeriesByGenre(genre: Genre): Series[] {
+    let genreSeries: Series[] = [];
+    let bookIds: number[] = [];
+    
+    //gets book ids based on genre
+    for(let i = 0; i < this.bookGenreTable.length; i++) {
+      if(genre.GenreId == this.bookGenreTable[i].GenreId) {
+        bookIds.push(this.bookGenreTable[i].BookId);
+      }
+    }
+    return this.getSeriesByBooks(bookIds);
+  }
+
+  getSeriesByPublisher(publisher: Publisher): Series[] {
+    let publisherSeries: Series[] = [];
+    let bookIds: number[] = [];
+
+    //gets bookIds based on publisher
+    for(let i = 0; i < this.booksTable.length; i++) {
+      if(publisher.PublisherId == this.booksTable[i].PublisherId) {
+        bookIds.push(this.booksTable[i].BookId);
+      }
+    }
+    return this.getSeriesByBooks(bookIds);
+  }
+
+  public getSeriesByBooks(bookIds: number[]): Series[] {
     //gets series from bookIds
+    let filteredSeries: Series[] = [];
     var currentSeriesId;
     for(let i = 0; i < bookIds.length; i++) {
       currentSeriesId = this.seriesBookTable[bookIds[i] - 1].SeriesId;
-      if(!authorSeries.includes(this.seriesTable[currentSeriesId - 1])) {
-        authorSeries.push(this.seriesTable[currentSeriesId - 1])
+      if(!filteredSeries.includes(this.seriesTable[currentSeriesId - 1])) {
+        filteredSeries.push(this.seriesTable[currentSeriesId - 1])
       }
     }
-    return authorSeries;
+    return filteredSeries;
   }
 
+  //returns all books in given series
   public getBooksBySeries(series: Series): Book[] {
     let seriesBooks: Book[] = [];
     var currentBookId;

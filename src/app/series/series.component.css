@@ -25,7 +25,7 @@
 
 /* gallery */
 .gallery-container {
-  width: 100vw;
+  width: 98vw;
   display: flex;
   gap: 1.25rem;
   justify-content: center;

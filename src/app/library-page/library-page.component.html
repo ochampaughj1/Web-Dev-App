@@ -6,12 +6,18 @@
         <!--Authors-->
         <li>Authors:</li>
         <div *ngFor="let author of authorList" class="filter-option">
-          <input type="checkbox" (change)="filterbyAuthors(author)">{{author.AuthorName}}
+          <input type="checkbox" (change)="filterSeries(author)">{{author.AuthorName}}
         </div>
         <!--Genres-->
         <li>Genre</li>
+        <div *ngFor="let genre of genreList" class="filter-option">
+          <input type="checkbox" (change)="filterSeries(genre)">{{genre.GenreName}}
+        </div>
         <!--Publishers-->
         <li>Publisher</li>
+        <div *ngFor="let publisher of publisherList" class="filter-option">
+          <input type="checkbox" (change)="filterSeries(publisher)">{{publisher.PublisherName}}
+        </div>
       </ul>
   </div>
   <!--Displays list of series based on filters-->
