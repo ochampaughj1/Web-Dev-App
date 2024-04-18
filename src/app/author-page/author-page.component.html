@@ -1,12 +1,10 @@
-<p>{{author}}</p>
-
 <!--temporary author display information-->
 <div class="author-container">
     <div class="author-info-container">
-        <h1>{{author}}</h1>
+        <h1>{{author.AuthorName}}</h1>
         <div class="author-info">
             <ul>
-                <li>link</li>
+                <a href={{author.AuthorLink}}>{{author.AuthorName}}'s Page</a>
                 <li>series objects</li>
                 <li>need to create a series-style component to display stand-alone books</li>
                 <li>layout like library-page for books or figure out what information to display</li>

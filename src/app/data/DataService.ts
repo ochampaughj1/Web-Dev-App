@@ -1,18 +1,16 @@
 //Publishers (*NEED TO DOUBLE CHECK PUBLISHERS*)
-const pub1 = new Publisher(1,"temp1");
-const pub2 = new Publisher(2,"temp2");
-const pub3 = new Publisher(3,"temp3");
-const pub4 = new Publisher(4,"temp4");
-const pub5 = new Publisher(5,"temp5");
-const pub6 = new Publisher(6,"temp6");
-const pub7 = new Publisher(7,"temp7");
-const pub8 = new Publisher(8,"temp8");
-const pub9 = new Publisher(9,"temp9");
-const pub10 = new Publisher(10,"temp10");
-const pub11 = new Publisher(11,"temp11");
-const pub12 = new Publisher(12,"temp12");
-const pub13 = new Publisher(13,"temp13");
-const pub14 = new Publisher(14,"temp14");
+const pub1 = new Publisher(1,"Black Stone Publishing");
+const pub2 = new Publisher(2,"Penguin Group");
+const pub3 = new Publisher(3,"Square Fish");
+const pub4 = new Publisher(4,"Dean");
+const pub5 = new Publisher(5,"Katherine Tegen Books");
+const pub6 = new Publisher(6,"Carolrhoda Lab");
+const pub7 = new Publisher(7,"Hyperion");
+const pub8 = new Publisher(8,"Travel Duck Press");
+const pub9 = new Publisher(9,"Balzer + Bray");
+const pub10 = new Publisher(10,"E.G. Michaels");
+const pub11 = new Publisher(11,"HarperTeen");
+const pub12 = new Publisher(12,"Falkner Books");
 
 //Genres
 const genre1 = new Genre(1, "Dystopian");
@@ -143,123 +141,122 @@ const ba84 = new BookAuthor(84,14); const ga272 = new BookGenre(8,1);  const ga2
 //**NOT UPDATED** 
 //Series and Book hard data
 const HellDivers = new Series(1, "Hell Divers", 11);
-const h1 = new Book(1, 1, "Hell Divers", 200, "temp", 2000, "./assets/images/helldivers1.jpg", "Nicholas Sansbury Smith", false);
-const h2 = new Book(2, 1, "Hell Divers: Ghosts", 200, "temp", 2000, "./assets/images/helldivers2.jpg", "Nicholas Sansbury Smith", false);
-const h3 = new Book(3, 1, "Hell Divers: Deliverance", 200, "temp", 2000, "./assets/images/helldivers3.jpg", "Nicholas Sansbury Smith", false);
-const h4 = new Book(4, 1, "Hell Divers: Wolves", 200, "temp", 2000, "./assets/images/helldivers4.jpg", "Nicholas Sansbury Smith", false);
-const h5 = new Book(5, 1, "Hell Divers: Captives", 200, "temp", 2000, "./assets/images/helldivers5.jpg", "Nicholas Sansbury Smith", false);
-const h6 = new Book(6, 1, "Hell Divers: Allegiance", 200, "temp", 2000, "./assets/images/helldivers6.jpg", "Nicholas Sansbury Smith", false);
-const h7 = new Book(7, 1, "Hell Divers: Warriors", 200, "temp", 2000, "./assets/images/helldivers7.jpg", "Nicholas Sansbury Smith", false);
-const h8 = new Book(8, 1, "Hell Divers: King Of The Wastes", 200, "temp", 2000, "./assets/images/helldivers8.jpg", "Nicholas Sansbury Smith", false);
-const h9 = new Book(9, 1, "Hell Divers: Radioactive", 200, "temp", 2000, "./assets/images/helldivers9.jpg", "Nicholas Sansbury Smith", false);
-const h10 = new Book(10, 1, "Hell Divers: Fallout", 200, "temp", 2000, "./assets/images/helldivers10.jpg", "Nicholas Sansbury Smith", false);
-const h11 = new Book(11, 1, "Hell Divers: Renegades", 200, "temp", 2000, "./assets/images/helldivers11.jpg", "Nicholas Sansbury Smith", false);
+const h1 = new Book(1, 1, "Hell Divers", 402, "temp", 2000, "./assets/images/helldivers1.jpg", false);
+const h2 = new Book(2, 1, "Hell Divers: Ghosts", 342, "temp", 2000, "./assets/images/helldivers2.jpg", false);
+const h3 = new Book(3, 1, "Hell Divers: Deliverance", 461, "temp", 2000, "./assets/images/helldivers3.jpg", false);
+const h4 = new Book(4, 1, "Hell Divers: Wolves", 417, "temp", 2000, "./assets/images/helldivers4.jpg", false);
+const h5 = new Book(5, 1, "Hell Divers: Captives", 438, "temp", 2000, "./assets/images/helldivers5.jpg", false);
+const h6 = new Book(6, 1, "Hell Divers: Allegiance", 485, "temp", 2000, "./assets/images/helldivers6.jpg", false);
+const h7 = new Book(7, 1, "Hell Divers: Warriors", 691, "temp", 2000, "./assets/images/helldivers7.jpg", false);
+const h8 = new Book(8, 1, "Hell Divers: King Of The Wastes", 621, "temp", 2000, "./assets/images/helldivers8.jpg", false);
+const h9 = new Book(9, 1, "Hell Divers: Radioactive", 504, "temp", 2000, "./assets/images/helldivers9.jpg", false);
+const h10 = new Book(10, 1, "Hell Divers: Fallout", 461, "temp", 2000, "./assets/images/helldivers10.jpg", false);
+const h11 = new Book(11, 1, "Hell Divers: Renegades", 470, "temp", 2000, "./assets/images/helldivers11.jpg", false);
 
 const Legend = new Series(2, "Legend", 4);
-const l1 = new Book(12, 2, "Legend", 200, "temp", 2000, "./assets/images/legend.jpg", "Marie Lu", false);
-const l2 = new Book(13, 2, "Progidy", 200, "temp", 2000, "./assets/images/prodigy.jpg", "Marie Lu", false);
-const l3 = new Book(14, 2, "Champion", 200, "temp", 2000, "./assets/images/champion.jpg", "Marie Lu", false);
-const l4 = new Book(15, 2, "Rebel", 200, "temp", 2000, "./assets/images/rebel.jpg", "Marie Lu", false);
+const l1 = new Book(12, 2, "Legend", 295, "temp", 2000, "./assets/images/legend.jpg", false);
+const l2 = new Book(13, 2, "Progidy", 354, "temp", 2000, "./assets/images/prodigy.jpg", false);
+const l3 = new Book(14, 2, "Champion", 353, "temp", 2000, "./assets/images/champion.jpg", false);
+const l4 = new Book(15, 2, "Rebel", 200, "temp", 2000, "./assets/images/rebel.jpg", false);
 
 const BZRK = new Series(3, "BZRK", 3);
-const b1 = new Book(16, 3, "BZRK", 200, "temp", 2000, "./assets/images/BZRK.jpg", "Michael Grant", false);
-const b2 = new Book(17, 3, "BZRK: Reloaded", 200, "temp", 2000, "./assets/images/BZRK-Reloaded.jpg", "Michael Grant", false);
-const b3 = new Book(18, 3, "BZRK: Apocalypse", 200, "temp", 2000, "./assets/images/BZRK-Apocalypse.jpg", "Michael Grant", false);
+const b1 = new Book(16, 4, "BZRK", 407, "temp", 2000, "./assets/images/BZRK.jpg", false);
+const b2 = new Book(17, 4, "BZRK: Reloaded", 432, "temp", 2000, "./assets/images/BZRK-Reloaded.jpg",false);
+const b3 = new Book(18, 4, "BZRK: Apocalypse", 442, "temp", 2000, "./assets/images/BZRK-Apocalypse.jpg", false);
 
 const YoungElites = new Series(4, "The Young Elites", 3);
-const ye1 = new Book(19, 2, "The Young Elites", 200, "temp", 2000, "./assets/images/temp.jpg", "Marie Lu", false);
-const ye2 = new Book(20, 2, "The Rose Society", 200, "temp", 2000, "./assets/images/temp.jpg", "Marie Lu", false);
-const ye3 = new Book(21, 2, "The Midnight Star", 200, "temp", 2000, "./assets/images/temp.jpg", "Marie Lu", false);
+const ye1 = new Book(19, 2, "The Young Elites", 357, "temp", 2000, "./assets/images/the young elites.jpg", false);
+const ye2 = new Book(20, 2, "The Rose Society", 397, "temp", 2000, "./assets/images/the rose society.jpg", false);
+const ye3 = new Book(21, 2, "The Midnight Star", 320, "temp", 2000, "./assets/images/the midnight star.jpg", false);
 
 const EscapeFromFurnace = new Series(5, "Escape From Furnace", 5);
-const esc1 = new Book(22, 4, "Lockdown", 200, "temp", 2000, "./assets/images/temp.jpg", "Alexander Gordon Smith", false);
-const esc2 = new Book(23, 4, "Solitary", 200, "temp", 2000, "./assets/images/temp.jpg", "Alexander Gordon Smith", false);
-const esc3 = new Book(24, 4, "Death Sentence", 200, "temp", 2000, "./assets/images/temp.jpg", "Alexander Gordon Smith", false);
-const esc4 = new Book(25, 4, "Fugitives", 200, "temp", 2000, "./assets/images/temp.jpg", "Alexander Gordon Smith", false);
-const esc5 = new Book(26, 4, "Execution", 200, "temp", 2000, "./assets/images/temp.jpg", "Alexander Gordon Smith", false);
+const esc1 = new Book(22, 3, "Lockdown", 273, "temp", 2000, "./assets/images/lockdown.jpg",false);
+const esc2 = new Book(23, 3, "Solitary", 225, "temp", 2000, "./assets/images/solitary.jpg", false);
+const esc3 = new Book(24, 3, "Death Sentence", 261, "temp", 2000, "./assets/images/death sentence.jpg", false);
+const esc4 = new Book(25, 3, "Fugitives", 270, "temp", 2000, "./assets/images/fugitives.jpg", false);
+const esc5 = new Book(26, 3, "Execution", 312, "temp", 2000, "./assets/images/execution.jpg", false);
 
 const Gone = new Series(6, "Gone", 6);
-const g1 = new Book(27, 3, "Gone", 200, "temp", 2000, "./assets/images/temp.jpg", "Michael Grant", false);
-const g2 = new Book(28, 3, "Hunger", 200, "temp", 2000, "./assets/images/temp.jpg", "Michael Grant", false);
-const g3 = new Book(29, 3, "Lies", 200, "temp", 2000, "./assets/images/temp.jpg", "Michael Grant", false);
-const g4 = new Book(30, 3, "Plague", 200, "temp", 2000, "./assets/images/temp.jpg", "Michael Grant", false);
-const g5 = new Book(31, 3, "Fear", 200, "temp", 2000, "./assets/images/temp.jpg", "Michael Grant", false);
-const g6 = new Book(32, 3, "Light", 200, "temp", 2000, "./assets/images/temp.jpg", "Michael Grant", false);
+const g1 = new Book(27, 4, "Gone", 560, "temp", 2000, "./assets/images/gone.jpg", false);
+const g2 = new Book(28, 4, "Hunger", 586, "temp", 2000, "./assets/images/hunger.jpg", false);
+const g3 = new Book(29, 4, "Lies", 472, "temp", 2000, "./assets/images/lies.jpg", false);
+const g4 = new Book(30, 4, "Plague", 526, "temp", 2000, "./assets/images/plague.jpg", false);
+const g5 = new Book(31, 4, "Fear", 549, "temp", 2000, "./assets/images/fear.jpg", false);
+const g6 = new Book(32, 4, "Light", 435, "temp", 2000, "./assets/images/light.jpg", false);
 
 const Monster = new Series(7, "Monster", 3);
-const mon1 = new Book(33, 3, "Monster", 200, "temp", 2000, "./assets/images/temp.jpg", "Michael Grant", false);
-const mon2 = new Book(34, 3, "Villain", 200, "temp", 2000, "./assets/images/temp.jpg", "Michael Grant", false);
-const mon3 = new Book(35, 3, "Hero", 200, "temp", 2000, "./assets/images/temp.jpg", "Michael Grant", false);
+const mon1 = new Book(33, 5, "Monster", 420, "temp", 2000, "./assets/images/monster.jpg", false);
+const mon2 = new Book(34, 5, "Villain", 324, "temp", 2000, "./assets/images/villain.jpg", false);
+const mon3 = new Book(35, 5, "Hero", 427, "temp", 2000, "./assets/images/hero.jpg", false);
 
 const Quarantine = new Series(8, "Quarantine", 4);
-const q1 = new Book(36, 5, "The Loners", 200, "temp", 2000, "./assets/images/temp.jpg", "Lex Thomas", false);
-const q2 = new Book(37, 5, "The Saints", 200, "temp", 2000, "./assets/images/temp.jpg", "Lex Thomas", false);
-const q3 = new Book(38, 5, "The Burnouts", 200, "temp", 2000, "./assets/images/temp.jpg", "Lex Thomas", false);
-const q4 = new Book(39, 5, "The Giant", 200, "temp", 2000, "./assets/images/temp.jpg", "Lex Thomas", false);
+const q1 = new Book(36, 6, "The Loners", 404, "temp", 2000, "./assets/images/the loners.jpg", false);
+const q2 = new Book(37, 6, "The Saints", 384, "temp", 2000, "./assets/images/the saints.jpg", false);
+const q3 = new Book(38, 6, "The Burnouts", 266, "temp", 2000, "./assets/images/the burnouts.jpg", false);
+const q4 = new Book(39, 6, "The Giant", 345, "temp", 2000, "./assets/images/the giant.jpg", false);
 
 const DarkestMinds = new Series(9, "The Darkest Minds", 5);
-const dm1 = new Book(40, 6, "The Darkest Minds", 200, "temp", 2000, "./assets/images/temp.jpg", "Alexandra Bracken", false);
-const dm2 = new Book(41, 6, "Never Fade", 200, "temp", 2000, "./assets/images/temp.jpg", "Alexandra Bracken", false);
-const dm3 = new Book(42, 6, "In The Afterlight", 200, "temp", 2000, "./assets/images/temp.jpg", "Alexandra Bracken", false);
-const dm4 = new Book(43, 6, "Through The Dark", 200, "temp", 2000, "./assets/images/temp.jpg", "Alexandra Bracken", false);
-const dm5 = new Book(44, 6, "The Darkest Legacy", 200, "temp", 2000, "./assets/images/temp.jpg", "Alexandra Bracken", false);
+const dm1 = new Book(40, 7, "The Darkest Minds", 488, "temp", 2000, "./assets/images/the darkest minds.jpg", false);
+const dm2 = new Book(41, 7, "Never Fade", 507, "temp", 2000, "./assets/images/never fade.jpg", false);
+const dm3 = new Book(42, 7, "In The Afterlight", 535, "temp", 2000, "./assets/images/in the afterlight.jpg", false);
+const dm4 = new Book(43, 7, "Through The Dark", 395, "temp", 2000, "./assets/images/through the dark.jpg", false);
+const dm5 = new Book(44, 7, "The Darkest Legacy", 569, "temp", 2000, "./assets/images/the darkest legacy.jpg", false);
 
 const ConspiracyChronicles = new Series(10, "The Conspiracy Chronicles", 15);
-const cc1 = new Book(45, 7, "Recruitment", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc2 = new Book(46, 7, "Render", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc3 = new Book(47, 7, "Rebellion", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc4 = new Book(48, 7, "Survival", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc5 = new Book(49, 7, "Sacrifice", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc6 = new Book(50, 7, "Synthesis", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc7 = new Book(51, 7, "Travelers", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc8 = new Book(52, 7, "Transfigured", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc9 = new Book(53, 7, "Terminus", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc10 = new Book(54, 7, "Emergents Academy", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc11 = new Book(55, 7, "Cult Of The Devoted", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc12 = new Book(56, 7, "Army Of The Unsettled", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc13 = new Book(57, 7, "Arise", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc14 = new Book(58, 7, "Banished", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
-const cc15 = new Book(59, 7, "Crusade", 200, "temp", 2000, "./assets/images/temp.jpg", "K.A. Riley", false);
+const cc1 = new Book(45, 8, "Recruitment", 299, "temp", 2000, "./assets/images/recruitment.jpg", false);
+const cc2 = new Book(46, 8, "Render", 275, "temp", 2000, "./assets/images/render.jpg", false);
+const cc3 = new Book(47, 8, "Rebellion", 284, "temp", 2000, "./assets/images/rebellion.jpg", false);
+const cc4 = new Book(48, 8, "Survival", 283, "temp", 2000, "./assets/images/survival.jpg", false);
+const cc5 = new Book(49, 8, "Sacrifice", 295, "temp", 2000, "./assets/images/sacrifice.jpg", false);
+const cc6 = new Book(50, 8, "Synthesis", 323, "temp", 2000, "./assets/images/synthesis.jpg", false);
+const cc7 = new Book(51, 8, "Travelers", 329, "temp", 2000, "./assets/images/travelers.jpg", false);
+const cc8 = new Book(52, 8, "Transfigured", 339, "temp", 2000, "./assets/images/transfigured.jpg", false);
+const cc9 = new Book(53, 8, "Terminus", 307, "temp", 2000, "./assets/images/terminus.jpg", false);
+const cc10 = new Book(54, 8, "Emergents Academy", 326, "temp", 2000, "./assets/images/emergents academy.jpg", false);
+const cc11 = new Book(55, 8, "Cult Of The Devoted", 308, "temp", 2000, "./assets/images/cult of the devoted.jpg", false);
+const cc12 = new Book(56, 8, "Army Of The Unsettled", 368, "temp", 2000, "./assets/images/army of the unsettled.jpg", false);
+const cc13 = new Book(57, 8, "Arise", 356, "temp", 2000, "./assets/images/arise.jpg", false);
+const cc14 = new Book(58, 8, "Banished", 295, "temp", 2000, "./assets/images/banished.jpg", false);
+const cc15 = new Book(59, 8, "Crusade", 445, "temp", 2000, "./assets/images/crusade.jpg", false);
 
 const Divergent = new Series(11, "Divergent", 4);
-const div1 = new Book(60, 8, "Divergent", 200, "temp", 2000, "./assets/images/temp.jpg", "Veronica Roth", false);
-const div2 = new Book(61, 8, "Insurgent", 200, "temp", 2000, "./assets/images/temp.jpg", "Veronica Roth", false);
-const div3 = new Book(62, 8, "Allegiant", 200, "temp", 2000, "./assets/images/temp.jpg", "Veronica Roth", false);
-const div4 = new Book(63, 8, "Four", 200, "temp", 2000, "./assets/images/temp.jpg", "Veronica Roth", false);
-
+const div1 = new Book(60, 5, "Divergent", 487, "temp", 2000, "./assets/images/divergent.jpg", false);
+const div2 = new Book(61, 5, "Insurgent", 525, "temp", 2000, "./assets/images/insurgent.jpg", false);
+const div3 = new Book(62, 5, "Allegiant", 526, "temp", 2000, "./assets/images/allegiant.jpg", false);
+const div4 = new Book(63, 5, "Four", 285, "temp", 2000, "./assets/images/four.jpg", false);
 
 const Partials = new Series(12, "Partials", 3);
-const p1 = new Book(64, 9, "Partials", 200, "temp", 2000, "./assets/images/temp.jpg", "Dan Wells", false);
-const p2 = new Book(65, 9, "Fragments", 200, "temp", 2000, "./assets/images/temp.jpg", "Dan Wells", false);
-const p3 = new Book(66, 9, "Ruins", 200, "temp", 2000, "./assets/images/temp.jpg", "Dan Wells", false);
+const p1 = new Book(64, 9, "Partials", 468, "temp", 2000, "./assets/images/partials.jpg", false);
+const p2 = new Book(65, 9, "Fragments", 564, "temp", 2000, "./assets/images/fragments.jpg", false);
+const p3 = new Book(66, 9, "Ruins", 451, "temp", 2000, "./assets/images/ruins.jpg", false);
 
 const Wretched = new Series(13, "The Wretched", 4);
-const w1 = new Book(67, 10, "The Wretched", 200, "temp", 2000, "./assets/images/temp.jpg", "E.G. Michaels", false);
-const w2 = new Book(68, 10, "Wretched Culling", 200, "temp", 2000, "./assets/images/temp.jpg", "E.G. Michaels", false);
-const w3 = new Book(69, 10, "Wretched Retribution", 200, "temp", 2000, "./assets/images/temp.jpg", "E.G. Michaels", false);
-const w4 = new Book(70, 10, "Wretched Aftermath", 200, "temp", 2000, "./assets/images/temp.jpg", "E.G. Michaels", false);
+const w1 = new Book(67, 10, "The Wretched", 299, "temp", 2000, "./assets/images/the wretched.jpg", false);
+const w2 = new Book(68, 10, "Wretched Culling", 305, "temp", 2000, "./assets/images/culling.jpg", false);
+const w3 = new Book(69, 10, "Wretched Retribution", 301, "temp", 2000, "./assets/images/retribution.jpg", false);
+const w4 = new Book(70, 10, "Wretched Aftermath", 325, "temp", 2000, "./assets/images/aftermath.jpg", false);
 
 const Variant = new Series(14, "Variant", 2);
-const v1 = new Book(71, 11, "Variant", 200, "temp", 2000, "./assets/images/temp.jpg", "Robison Wells", false);
-const v2 = new Book(72, 11, "Feedback", 200, "temp", 2000, "./assets/images/temp.jpg", "Robison Wells", false);
+const v1 = new Book(71, 11, "Variant", 376, "temp", 2000, "./assets/images/variant.jpg", false);
+const v2 = new Book(72, 11, "Feedback", 310, "temp", 2000, "./assets/images/feedback.jpg", false);
 
 const Enemy = new Series(15, "The Enemy", 7);
-const e1 = new Book(73, 12, "The Enemy", 200, "temp", 2000, "./assets/images/temp.jpg", "Charlie Higson", false);
-const e2 = new Book(74, 12, "The Dead", 200, "temp", 2000, "./assets/images/temp.jpg", "Charlie Higson", false);
-const e3 = new Book(75, 12, "The Fear", 200, "temp", 2000, "./assets/images/temp.jpg", "Charlie Higson", false);
-const e4 = new Book(76, 12, "The Sacrifice", 200, "temp", 2000, "./assets/images/temp.jpg", "Charlie Higson", false);
-const e5 = new Book(77, 12, "The Fallen", 200, "temp", 2000, "./assets/images/temp.jpg", "Charlie Higson", false);
-const e6 = new Book(78, 12, "The Hunted", 200, "temp", 2000, "./assets/images/temp.jpg", "Charlie Higson", false);
-const e7 = new Book(79, 12, "The End", 200, "temp", 2000, "./assets/images/temp.jpg", "Charlie Higson", false);
+const e1 = new Book(73, 2, "The Enemy", 407, "temp", 2000, "./assets/images/the enemy.jpg", false);
+const e2 = new Book(74, 2, "The Dead", 450, "temp", 2000, "./assets/images/the dead.jpg", false);
+const e3 = new Book(75, 2, "The Fear", 460, "temp", 2000, "./assets/images/the fear.jpg", false);
+const e4 = new Book(76, 2, "The Sacrifice", 456, "temp", 2000, "./assets/images/the sacrifice.jpg", false);
+const e5 = new Book(77, 2, "The Fallen", 502, "temp", 2000, "./assets/images/the fallen.jpg", false);
+const e6 = new Book(78, 2, "The Hunted", 439, "temp", 2000, "./assets/images/the hunted.jpg", false);
+const e7 = new Book(79, 2, "The End", 454, "temp", 2000, "./assets/images/the end.jpg", false);
 
 const Monument14 = new Series(16, "Monument 14", 3);
-const m1 = new Book(80, 13, "Monument 14", 200, "temp", 2000, "./assets/images/temp.jpg", "Emmy Laybourne", false);
-const m2 = new Book(81, 13, "Sky On Fire", 200, "temp", 2000, "./assets/images/temp.jpg", "Emmy Laybourne", false);
-const m3 = new Book(82, 13, "Savage Drift", 200, "temp", 2000, "./assets/images/temp.jpg", "Emmy Laybourne", false);
+const m1 = new Book(80, 3, "Monument 14", 294, "temp", 2000, "./assets/images/monument 14.jpg", false);
+const m2 = new Book(81, 3, "Sky On Fire", 215, "temp", 2000, "./assets/images/sky on fire.jpg", false);
+const m3 = new Book(82, 3, "Savage Drift", 305, "temp", 2000, "./assets/images/savage drift.jpg", false);
 
 
-const BrainJack = new Book(83, 14, "Brain Jack", 200, "temp", 2000, "./assets/images/temp.jpg", "Brian Falkner", true);
-const TomorrowCode = new Book(84, 14, "The Tomorrow Code", 200, "temp", 2000, "./assets/images/temp.jpg", "Brian Falkner", true);
+const BrainJack = new Book(83, 12, "Brain Jack", 349, "temp", 2000, "./assets/images/brain jack.jpg", true);
+const TomorrowCode = new Book(84, 12, "The Tomorrow Code", 317, "temp", 2000, "./assets/images/the tomorrow code.jpg", true);
 
 
 
@@ -319,7 +316,7 @@ export class DataService {
     sb81, sb82
   ];
   genreTable: Genre[] = [genre1, genre2, genre3, genre4, genre5];
-  publisherTable: Publisher[] = [pub1, pub2, pub3, pub4, pub5, pub6, pub7, pub8, pub9, pub10, pub11, pub12, pub13, pub14];
+  publisherTable: Publisher[] = [pub1, pub2, pub3, pub4, pub5, pub6, pub7, pub8, pub9, pub10, pub11, pub12];
   
   //public scope: Array<any> | boolean = false;
   constructor() {

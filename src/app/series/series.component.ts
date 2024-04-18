@@ -26,19 +26,20 @@ export class SeriesComponent implements OnInit{
 
   //books list and checking will be updated with Data Service once dummy data established
   booksList: Book[] = [];
-  authorHeader: string = '';
 
   seriesList: Series[] = this.dataService.getSeriesList();
+
+  author: any;
   
   //Hard coded display data, will be updated when data is established
   //CHANGE TO PASS ACTUAL AUTHORS!!!
   ngOnInit(): void {
     this.booksList = this.dataService.getBooksBySeries(this.series);
-    this.authorHeader = this.dataService.getAuthorBySeries(this.series).AuthorName;
+    this.author = this.dataService.getAuthorBySeries(this.series);
   }
 
   //routes to author-page when an author is clicked
-  authorClick(author: string) {
+  authorClick(author: Author) {
     let data = btoa(JSON.stringify(author));
     let navigationExtras: NavigationExtras = {
       queryParams: {

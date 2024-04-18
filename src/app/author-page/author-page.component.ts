@@ -3,6 +3,7 @@ import { SeriesComponent } from "../series/series.component";
 import { DataService } from '../data/DataService';
 import { Series } from '../models/Series';
 import { ActivatedRoute } from '@angular/router';
+import { Author } from '../models/Author';
 
 
 @Component({
@@ -17,13 +18,13 @@ export class AuthorPageComponent implements OnInit{
     constructor(private dataService: DataService, private route: ActivatedRoute) {}
 
     seriesList: Series[] = this.dataService.getSeriesList();
-    author = '';
+    author: any;
 
     //gets author data from router link
     ngOnInit(): void {
         this.route.queryParams.subscribe(params => {
             let authorData = JSON.parse(atob(params['data']));
-            this.author = authorData
+            this.author = authorData;
         });
     }
 
