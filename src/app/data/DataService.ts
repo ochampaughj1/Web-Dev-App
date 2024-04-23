@@ -343,6 +343,18 @@ export class DataService {
     return this.publisherTable;
   }
 
+  //returns all stand alone books
+  public getStandAloneBooks(): Book[] {
+    let singleBooks: Book[] = [];
+    for(let i = 0; i < this.booksTable.length; i++) {
+      if(this.booksTable[i].StandAlone == true) {
+        singleBooks.push(this.booksTable[i]);
+      }
+    }
+    return singleBooks;
+  }
+
+  //gets author of given book
   public getBookAuthor(book: Book): Author {
     let author: any; 
     for(let i = 0; i < this.bookAuthorTable.length; i++) {
@@ -376,7 +388,6 @@ export class DataService {
 
   //returns all series by given author
   public getSeriesByAuthor(author: Author): Series[] {
-    let authorSeries: Series[] = [];
     let bookIds: number[] = [];
     
     //gets book ids based on author
@@ -388,8 +399,8 @@ export class DataService {
     return this.getSeriesByBooks(bookIds);
   }
 
+  //returns all series by given genre
   public getSeriesByGenre(genre: Genre): Series[] {
-    let genreSeries: Series[] = [];
     let bookIds: number[] = [];
     
     //gets book ids based on genre
@@ -401,8 +412,8 @@ export class DataService {
     return this.getSeriesByBooks(bookIds);
   }
 
+  //returns all series by given publishers
   getSeriesByPublisher(publisher: Publisher): Series[] {
-    let publisherSeries: Series[] = [];
     let bookIds: number[] = [];
 
     //gets bookIds based on publisher
@@ -414,6 +425,7 @@ export class DataService {
     return this.getSeriesByBooks(bookIds);
   }
 
+  //gets series by given bookIds
   public getSeriesByBooks(bookIds: number[]): Series[] {
     //gets series from bookIds
     let filteredSeries: Series[] = [];
@@ -438,5 +450,16 @@ export class DataService {
       }
     }
     return seriesBooks;
+  }
+
+  //NOT FULLY TESTED, NEED TO ADD MORE STAND ALONE BOOKS
+  public getStandAloneBookAuthors(books: Book[]): Author[] {
+    let standAloneAuthors: Author[] = [];
+    for(let i = 0; i < books.length; i++) {
+      if(!standAloneAuthors.includes(this.getBookAuthor(books[i]))) {
+        standAloneAuthors.push(this.getBookAuthor(books[i]));
+      }
+    }
+    return standAloneAuthors;
   }
 }

@@ -31,8 +31,7 @@ export class SeriesComponent implements OnInit{
 
   author: any;
   
-  //Hard coded display data, will be updated when data is established
-  //CHANGE TO PASS ACTUAL AUTHORS!!!
+  //sets booklist and author
   ngOnInit(): void {
     this.booksList = this.dataService.getBooksBySeries(this.series);
     this.author = this.dataService.getAuthorBySeries(this.series);

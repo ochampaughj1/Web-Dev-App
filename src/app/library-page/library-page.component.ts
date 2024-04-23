@@ -20,6 +20,9 @@ export class LibraryPageComponent {
   constructor(private dataService: DataService) {
 
   }
+
+
+  //Need to implement a method to sort and pass stand alone books as series
   
   //master lists for books, authors, and series
   seriesList: Series[] = this.dataService.getSeriesList();
@@ -28,10 +31,14 @@ export class LibraryPageComponent {
   genreList: Genre[] = this.dataService.getGenreList();
   publisherList: Publisher[] = this.dataService.getPublisherList();
 
+  //stand alone books and elements
+  standAloneBooks: Book[] = this.dataService.getStandAloneBooks();
+  standAloneBookAuthors: Author[] = this.dataService.getStandAloneBookAuthors(this.standAloneBooks);
+
   //filter items lists for updating page
   filteredSeriesList: Series[] = [];
+  filteredStandAloneList: Book[] = [];
   filterActive: boolean = false;
-
 
   //filters series
   //FILTER DOESNT WORK FOR STANDALONES!!!
