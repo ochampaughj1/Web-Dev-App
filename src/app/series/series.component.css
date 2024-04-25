@@ -8,6 +8,9 @@
   font-size: 50px;
   margin-bottom: 0;
 }
+.author-page {
+  margin-bottom: 1rem;
+}
 .link-container {
   justify-content: center;
 }

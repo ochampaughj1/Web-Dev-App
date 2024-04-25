@@ -6,6 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Author } from '../models/Author';
 import { NgFor } from '@angular/common';
 
+declare function deleteFunction(): any;
+
 @Component({
     selector: 'app-author-page',
     standalone: true,
@@ -19,6 +21,7 @@ export class AuthorPageComponent implements OnInit{
 
     seriesList: Series[] = [];
     author: any;
+    type: string = "authorPage";
 
     //gets author data from router link
     ngOnInit(): void {

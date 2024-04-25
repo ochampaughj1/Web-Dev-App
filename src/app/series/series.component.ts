@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Series } from '../models/Series';
 import { Book } from '../models/Book';
-import { NgFor } from '@angular/common';
+import { NgFor , NgIf} from '@angular/common';
 import { BookComponent } from "../book/book.component";
 import { Router, RouterLink, RouterLinkActive, NavigationExtras } from '@angular/router';
 import { DataService } from '../data/DataService';
@@ -12,7 +12,7 @@ import { Author } from '../models/Author';
     standalone: true,
     templateUrl: './series.component.html',
     styleUrl: './series.component.css',
-    imports: [NgFor, BookComponent, RouterLink, RouterLinkActive], 
+    imports: [NgFor, NgIf, BookComponent, RouterLink, RouterLinkActive], 
     providers: [DataService]
 })
 export class SeriesComponent implements OnInit{
@@ -23,6 +23,9 @@ export class SeriesComponent implements OnInit{
 
   //Inputs passed from library-page to display books in the passed in series
   @Input() series: any;
+  @Input() displayType: any;
+
+  type = 'authorPage';
 
   //books list and checking will be updated with Data Service once dummy data established
   booksList: Book[] = [];

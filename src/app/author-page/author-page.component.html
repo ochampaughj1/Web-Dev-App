@@ -8,7 +8,7 @@
         </h1>
         <div class="author-info">
             <div *ngFor="let currentSeries of seriesList;" class="series-container">
-                <app-series [series]=currentSeries></app-series>
+                <app-series [series]=currentSeries [displayType]="type"></app-series>
             </div>
         </div>    
     </div>

@@ -25,6 +25,7 @@ export class LibraryPageComponent {
 
   //Need to implement a method to sort and pass stand alone books as series
   
+
   //master lists for books, authors, and series
   seriesList: Series[] = this.dataService.getSeriesList();
   booksList: Book[] = this.dataService.getBookList();

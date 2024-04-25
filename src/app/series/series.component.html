@@ -1,10 +1,17 @@
 <div class="container">
   <!--Series Information-->
-  <div class="heading">
+  <div *ngIf="displayType != type; else elseBlock">
+    <div class="heading">
       <h1>{{series.Title}}</h1>
       <!--Link to author-page-->
-      <div class="link-container"><p class="author-link"  (click)="authorClick(author)">{{author.AuthorName}}</p></div>
+      <div id="authorLink" class="link-container"><p class="author-link"  (click)="authorClick(author)">{{author.AuthorName}}</p></div>
+    </div>
   </div>
+  <ng-template #elseBlock>
+    <div class="heading author-page">
+      <h1>{{series.Title}}</h1>
+    </div>
+  </ng-template>
 
   <!--Series Books-->
   <div class="gallery-container">
