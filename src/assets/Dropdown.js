@@ -4,7 +4,6 @@ function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
   document.getElementById("filterBtn").classList.toggle("btn-border");
 }
-
 // Close the dropdown menu if the user clicks outside of it
 window.addEventListener('click', function(event){   
   if (!document.getElementById('myDropdown').contains(event.target)){

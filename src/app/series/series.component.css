@@ -36,3 +36,6 @@
 .book-container:last-child {
   padding-right: .5rem;
 }
+.show {
+  display: none;
+}

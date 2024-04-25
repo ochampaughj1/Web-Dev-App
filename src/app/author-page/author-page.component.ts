@@ -6,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Author } from '../models/Author';
 import { NgFor } from '@angular/common';
 
-
 @Component({
     selector: 'app-author-page',
     standalone: true,

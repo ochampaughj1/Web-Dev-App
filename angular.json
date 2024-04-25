@@ -28,8 +28,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/Dropdown.js",
-              "src/assets/SeriesAuthorLink.js"
+              "src/assets/Dropdown.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,
