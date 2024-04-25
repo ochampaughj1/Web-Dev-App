@@ -1,14 +1,16 @@
 <!--temporary author display information-->
 <div class="author-container">
     <div class="author-info-container">
-        <h1>{{author.AuthorName}}</h1>
-        <div class="author-info">
+        <h1>{{author.AuthorName}}
             <div class="author-link">
-                <p>Check out {{author.AuthorName}}'s personal website:</p><a href={{author.AuthorLink}}>{{author.AuthorName}}'s Page</a>
+                <a href={{author.AuthorLink}}><i class="fa-solid fa-link"></i></a>
             </div>
-        </div>
-        <div *ngFor="let currentSeries of seriesList;" class="series-container">
-            <app-series [series]=currentSeries></app-series>
+        </h1>
+        <div class="author-info">
+            <div *ngFor="let currentSeries of seriesList;" class="series-container">
+                <app-series [series]=currentSeries></app-series>
+            </div>
         </div>    
     </div>
 </div>
+<button (onclick)="deleteFunction()"></button>
