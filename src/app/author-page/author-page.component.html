@@ -3,12 +3,12 @@
     <div class="author-info-container">
         <h1>{{author.AuthorName}}</h1>
         <div class="author-info">
-            <ul>
-                <a href={{author.AuthorLink}}>{{author.AuthorName}}'s Page</a>
-                <li>series objects</li>
-                <li>need to create a series-style component to display stand-alone books</li>
-                <li>layout like library-page for books or figure out what information to display</li>
-            </ul>    
+            <div class="author-link">
+                <p>Check out {{author.AuthorName}}'s personal website:</p><a href={{author.AuthorLink}}>{{author.AuthorName}}'s Page</a>
+            </div>
         </div>
+        <div *ngFor="let currentSeries of seriesList;" class="series-container">
+            <app-series [series]=currentSeries></app-series>
+        </div>    
     </div>
 </div>

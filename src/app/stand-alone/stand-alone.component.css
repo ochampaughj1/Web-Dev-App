@@ -1,0 +1,33 @@
+/*Series Information*/
+.heading {
+    display: grid;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.heading h1 {
+  font-size: 50px;
+  margin-bottom: 0;
+}
+.link-container {
+  justify-content: center;
+}
+.author-link {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+.author-link:hover {
+  color: aqua;
+  cursor: pointer;
+}
+
+/* gallery */
+.gallery-container {
+  width: 98vw;
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  margin-top: 16px;
+}

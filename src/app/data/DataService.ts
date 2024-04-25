@@ -259,7 +259,6 @@ const BrainJack = new Book(83, 12, "Brain Jack", 349, "temp", 2000, "./assets/im
 const TomorrowCode = new Book(84, 12, "The Tomorrow Code", 317, "temp", 2000, "./assets/images/the tomorrow code.jpg", true);
 
 
-
 import { Injectable } from "@angular/core";
 import { Series } from "../models/Series";
 import { Book } from "../models/Book";
@@ -413,7 +412,7 @@ export class DataService {
   }
 
   //returns all series by given publishers
-  getSeriesByPublisher(publisher: Publisher): Series[] {
+  public getSeriesByPublisher(publisher: Publisher): Series[] {
     let bookIds: number[] = [];
 
     //gets bookIds based on publisher

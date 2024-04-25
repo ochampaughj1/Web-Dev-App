@@ -1,14 +1,13 @@
 <div class="container">
     <!--Series Information-->
     <div class="heading">
-        <h1>Stand Alones</h1>
         <!--Link to author-page-->
-        <div class="link-container"><p class="author-link"  (click)="authorClick(author)">{{author.AuthorName}}</p></div>
+        <div class="link-container"><p class="author-link" (click)="authorClick(standAloneAuthor)">{{standAloneAuthor.AuthorName}}</p></div>
     </div>
   
     <!--Stand Alone Books-->
     <div class="gallery-container">
-      <div *ngFor="let currentBook of booksList">
+      <div *ngFor="let currentBook of standAloneBooksList">
         <app-book [book]=currentBook></app-book>
       </div>
     </div>

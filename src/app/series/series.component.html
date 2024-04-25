@@ -1,15 +1,13 @@
-<div class="container">
-  <!--Series Information-->
-  <div class="heading">
-      <h1>{{series.Title}}</h1>
-      <!--Link to author-page-->
-      <div class="link-container"><p class="author-link"  (click)="authorClick(author)">{{author.AuthorName}}</p></div>
-  </div>
+<!--Series Information-->
+<div class="heading">
+    <h1>{{series.Title}}</h1>
+    <!--Link to author-page-->
+    <div class="link-container"><p class="author-link"  (click)="authorClick(author)">{{author.AuthorName}}</p></div>
+</div>
 
-  <!--Series Books-->
-  <div class="gallery-container">
-    <div *ngFor="let currentBook of booksList">
-      <app-book [book]=currentBook></app-book>
-    </div>
+<!--Series Books-->
+<div class="gallery-container">
+  <div *ngFor="let currentBook of booksList" class="book-container">
+    <app-book [book]=currentBook></app-book>
   </div>
 </div>

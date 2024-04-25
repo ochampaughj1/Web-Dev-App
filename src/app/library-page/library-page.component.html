@@ -20,6 +20,7 @@
         </div>
       </ul>
   </div>
+</div>
   <!--Displays list of series based on filters-->
 <div *ngIf="filterActive == true; else elseBlock">
   <div *ngFor="let currentSeries of filteredSeriesList;">
@@ -30,5 +31,9 @@
 <ng-template #elseBlock>
   <div *ngFor="let currentSeries of seriesList;">
     <app-series [series]=currentSeries></app-series>
+  </div>
+  <h1>Stand Alone Books (NEED TO ADD FILTERS AND CLEAN UP DESIGN)</h1>
+  <div *ngFor="let currentAuthor of standAloneBookAuthors">
+    <app-stand-alone [standAloneAuthor]="currentAuthor"></app-stand-alone>
   </div>
 </ng-template>

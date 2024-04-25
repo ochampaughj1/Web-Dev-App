@@ -7,11 +7,12 @@ import { NgFor, NgIf } from '@angular/common';
 import { Author } from '../models/Author';
 import { Genre } from '../models/Genre';
 import { Publisher } from '../models/Publisher';
+import { StandAloneComponent } from '../stand-alone/stand-alone.component';
 
 @Component({
   selector: 'app-series-page',
   standalone: true,
-  imports: [SeriesComponent, NgFor, NgIf],
+  imports: [StandAloneComponent, SeriesComponent, NgFor, NgIf],
   templateUrl: './library-page.component.html',
   styleUrl: './library-page.component.css',
   providers: [DataService]
