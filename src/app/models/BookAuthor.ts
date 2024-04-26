@@ -1,3 +1,4 @@
+/* Model for book author object */
 export class BookAuthor {
     BookId: number; 
     AuthorId: number;

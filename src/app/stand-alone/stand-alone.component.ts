@@ -15,11 +15,14 @@ import { Book } from '../models/Book';
     imports: [BookComponent, NgFor]
 })
 export class StandAloneComponent implements OnInit{
+  //Initializes router and data service for data passing
   constructor(private router: Router, private dataService: DataService){}
 
+  //variables to hold stand alone info
   @Input() standAloneAuthor: any;
   standAloneBooksList: Book[] = [];
 
+  //initializes global variables
   ngOnInit(): void {
     var books = this.dataService.getStandAloneBooks();
     for(let i = 0; i < books.length; i++) {

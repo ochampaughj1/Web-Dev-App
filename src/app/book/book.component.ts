@@ -10,9 +10,13 @@ import { Router, NavigationExtras} from '@angular/router';
   styleUrl: './book.component.css'
 })
 export class BookComponent {
+  //initializes router to use for book page
   constructor(private router: Router){}
 
+  //book passed down from series component
   @Input() book: any;
+
+  //variable to hold book information to pass along route
   data: any;
 
   //navigates to book-page and passes the selected book

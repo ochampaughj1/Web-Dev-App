@@ -17,21 +17,18 @@ import { Author } from '../models/Author';
 })
 export class SeriesComponent implements OnInit{
 
-  constructor(private router: Router, private dataService: DataService) {
+  //initializes router and data services for data passing 
+  constructor(private router: Router, private dataService: DataService) {  }
 
-  }
-
-  //Inputs passed from library-page to display books in the passed in series
+  //Input passed from library-page to display books in the passed in series
   @Input() series: any;
+  //display variables for page types
   @Input() displayType: any;
-
   type = 'authorPage';
 
-  //books list and checking will be updated with Data Service once dummy data established
+  //variables to hold passed data
   booksList: Book[] = [];
-
   seriesList: Series[] = this.dataService.getSeriesList();
-
   author: any;
   
   //sets booklist and author

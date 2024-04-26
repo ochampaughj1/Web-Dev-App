@@ -18,22 +18,19 @@ import { StandAloneComponent } from '../stand-alone/stand-alone.component';
   providers: [DataService]
 })
 export class LibraryPageComponent {
-  constructor(private dataService: DataService) {
+  //initializes data service to get data
+  constructor(private dataService: DataService) {}
 
-  }
 
+  /* NEED TO IMPLEMENT SORT METHOD AND STANDALONE BOOK PASSING
+     ALSO NEED TO IMPLEMENT STAND ALONE FILTERS */
 
-  //Need to implement a method to sort and pass stand alone books as series
-  
-
-  //master lists for books, authors, and series
+  //master lists for books, authors, series, and stand alones from data service
   seriesList: Series[] = this.dataService.getSeriesList();
   booksList: Book[] = this.dataService.getBookList();
   authorList: Author[] = this.dataService.getAuthorsList();
   genreList: Genre[] = this.dataService.getGenreList();
   publisherList: Publisher[] = this.dataService.getPublisherList();
-
-  //stand alone books and elements
   standAloneBooks: Book[] = this.dataService.getStandAloneBooks();
   standAloneBookAuthors: Author[] = this.dataService.getStandAloneBookAuthors(this.standAloneBooks);
 
@@ -62,7 +59,7 @@ export class LibraryPageComponent {
     }
   }
 
-  //checks if any checkboxes are checked
+  //checks if any filter checkboxes are checked
   checkFilterActive() {
     if(document.querySelectorAll("input:checked").length > 0) {
       this.filterActive = true;

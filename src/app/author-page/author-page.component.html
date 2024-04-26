@@ -1,13 +1,15 @@
-<!--temporary author display information-->
+<!--holds all author-page information-->
 <div class="author-container">
     <div class="author-info-container">
+        <!--author header-->
         <h1>{{author.AuthorName}}
             <div class="author-link">
                 <a href={{author.AuthorLink}}><i class="fa-solid fa-link"></i></a>
             </div>
         </h1>
+        <!--author informations and books/series-->
         <div class="author-info">
-            <div *ngFor="let currentSeries of seriesList;" class="series-container">
+            <div *ngFor="let currentSeries of seriesList;">
                 <app-series [series]=currentSeries [displayType]="type"></app-series>
             </div>
         </div>    

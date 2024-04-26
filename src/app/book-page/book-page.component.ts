@@ -12,8 +12,10 @@ import { DataService } from '../data/DataService';
   styleUrl: './book-page.component.css'
 })
 export class BookPageComponent implements OnInit{
+  //initializes active route and data service to retrieve book and author data
   constructor(private route: ActivatedRoute, private dataService: DataService) {}
 
+  //variables to store information for books and author
   book: any;
   author: any;
 

@@ -6,8 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Author } from '../models/Author';
 import { NgFor } from '@angular/common';
 
-declare function deleteFunction(): any;
-
 @Component({
     selector: 'app-author-page',
     standalone: true,
@@ -17,8 +15,10 @@ declare function deleteFunction(): any;
 })
 export class AuthorPageComponent implements OnInit{
 
+    //initializes data service
     constructor(private dataService: DataService, private route: ActivatedRoute) {}
 
+    //variables for display information
     seriesList: Series[] = [];
     author: any;
     type: string = "authorPage";

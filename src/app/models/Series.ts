@@ -1,3 +1,4 @@
+/* Model for series object */
 export class Series {
     SeriesId: number;
     Title: string;

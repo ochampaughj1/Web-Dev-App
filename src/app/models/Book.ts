@@ -1,3 +1,4 @@
+/* Model for book object */
 export class Book {
     BookId: number;
     PublisherId: number;
@@ -8,7 +9,8 @@ export class Book {
     Image: string;
     StandAlone: boolean;
 
-    constructor(bookId: number, publisherId: number, title: string, pages: number, summary: string, publishYear: number, image: string, standAlone: boolean) {
+    constructor(bookId: number, publisherId: number, title: string, pages: number, summary: string, 
+        publishYear: number, image: string, standAlone: boolean) {
         this.BookId =  bookId;
         this.PublisherId = publisherId;
         this.Title = title;

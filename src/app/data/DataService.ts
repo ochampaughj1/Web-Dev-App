@@ -138,7 +138,7 @@ const ba82 = new BookAuthor(82,13); const sb82 = new SeriesBook(82,16);  const g
 const ba83 = new BookAuthor(83,14); const ga269 = new BookGenre(8,1);  const ga270 = new BookGenre(8,3);  const ga271 = new BookGenre(8,5);
 const ba84 = new BookAuthor(84,14); const ga272 = new BookGenre(8,1);  const ga273 = new BookGenre(8,3);  const ga274 = new BookGenre(8,5);
 
-//**NOT UPDATED** 
+//**NOT FINISHED (NEEDS PUBLISH YEAR, SUMMARY, AND PAGES FOR REBEL** 
 //Series and Book hard data
 const HellDivers = new Series(1, "Hell Divers", 11);
 const h1 = new Book(1, 1, "Hell Divers", 402, "temp", 2000, "./assets/images/helldivers1.jpg", false);
@@ -254,7 +254,7 @@ const m1 = new Book(80, 3, "Monument 14", 294, "temp", 2000, "./assets/images/mo
 const m2 = new Book(81, 3, "Sky On Fire", 215, "temp", 2000, "./assets/images/sky on fire.jpg", false);
 const m3 = new Book(82, 3, "Savage Drift", 305, "temp", 2000, "./assets/images/savage drift.jpg", false);
 
-
+//Stand Alone Books
 const BrainJack = new Book(83, 12, "Brain Jack", 349, "temp", 2000, "./assets/images/brain jack.jpg", true);
 const TomorrowCode = new Book(84, 12, "The Tomorrow Code", 317, "temp", 2000, "./assets/images/the tomorrow code.jpg", true);
 
@@ -272,10 +272,11 @@ import { SeriesBook } from "../models/SeriesBook";
 
 @Injectable({providedIn: 'root'})
 export class DataService {
-  //testing data
+  //Table for all series data
   seriesTable: Series[] = [HellDivers, Legend, BZRK, YoungElites, EscapeFromFurnace, Gone, Monster, Quarantine, DarkestMinds, 
     ConspiracyChronicles, Divergent, Partials, Wretched, Variant, Enemy, Monument14
   ];
+  //table for all book data
   booksTable: Book[] = [h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, 
     l1, l2, l3, l4, b1, b2, b3, ye1, ye2, ye3, esc1, esc2, esc3, esc4, esc5, 
     g1, g2, g3, g4, g5, g6, mon1, mon2, mon3, q1, q2, q3, q4, dm1, dm2, dm3, dm4, dm5, 
@@ -283,7 +284,13 @@ export class DataService {
     div1, div2, div3, div4, p1, p2, p3, w1, w2, w3, w4, v1, v2, e1, e2, e3, e4, e5, e6, e7, 
     m1, m2, m3, BrainJack, TomorrowCode
   ];
+  //table for all author data
   authorTable: Author[] = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14];
+  //table for all genre data
+  genreTable: Genre[] = [genre1, genre2, genre3, genre4, genre5];
+  //table for all publisher data
+  publisherTable: Publisher[] = [pub1, pub2, pub3, pub4, pub5, pub6, pub7, pub8, pub9, pub10, pub11, pub12];
+  //connection table holding book and author Ids
   bookAuthorTable: BookAuthor[] = [
     ba1, ba2, ba3, ba4, ba5, ba6, ba7, ba8, ba9, ba10, ba11, ba12, ba13, ba14, ba15, ba16, ba17, ba18, ba19, ba20,
     ba21, ba22, ba23, ba24, ba25, ba26, ba27, ba28, ba29, ba30, ba31, ba32, ba33, ba34, ba35, ba36, ba37, ba38, ba39, ba40,
@@ -291,6 +298,7 @@ export class DataService {
     ba61, ba62, ba63, ba64, ba65, ba66, ba67, ba68, ba69, ba70, ba71, ba72, ba73, ba74, ba75, ba76, ba77, ba78, ba79, ba80,
     ba81, ba82, ba83, ba84
   ];
+  //connection table holding all book and genre Ids
   bookGenreTable: BookGenre[] = [
     ga1, ga2, ga3, ga4, ga5, ga6, ga7, ga8, ga9, ga10, ga11, ga12, ga13, ga14, ga15, ga16, ga17, ga18, ga19, ga20,
     ga21, ga22, ga23, ga24, ga25, ga26, ga27, ga28, ga29, ga30, ga31, ga32, ga33, ga34, ga35, ga36, ga37, ga38, ga39, ga40,
@@ -307,6 +315,7 @@ export class DataService {
     ga241, ga242, ga243, ga244, ga245, ga246, ga247, ga248, ga249, ga250, ga251, ga252, ga253, ga254, ga255, ga256, ga257, ga258, ga259, ga260,
     ga261, ga262, ga263, ga264, ga265, ga266, ga267, ga268, ga269, ga270, ga271, ga272, ga273, ga274
   ];
+  //connection table holding all series and book Ids
   seriesBookTable: SeriesBook[] = [
     sb1, sb2, sb3, sb4, sb5, sb6, sb7, sb8, sb9, sb10, sb11, sb12, sb13, sb14, sb15, sb16, sb17, sb18, sb19, sb20,
     sb21, sb22, sb23, sb24, sb25, sb26, sb27, sb28, sb29, sb30, sb31, sb32, sb33, sb34, sb35, sb36, sb37, sb38, sb39, sb40,
@@ -314,35 +323,33 @@ export class DataService {
     sb61, sb62, sb63, sb64, sb65, sb66, sb67, sb68, sb69, sb70, sb71, sb72, sb73, sb74, sb75, sb76, sb77, sb78, sb79, sb80,
     sb81, sb82
   ];
-  genreTable: Genre[] = [genre1, genre2, genre3, genre4, genre5];
-  publisherTable: Publisher[] = [pub1, pub2, pub3, pub4, pub5, pub6, pub7, pub8, pub9, pub10, pub11, pub12];
-  
-  //public scope: Array<any> | boolean = false;
-  constructor() {
 
-  }
-
+  //gets all series
   public getSeriesList() {
     return this.seriesTable;
   }
 
+  //gets all books
   public getBookList() {
     return this.booksTable;
   }
 
+  //gets all authors
   public getAuthorsList() {
     return this.authorTable;
   }
 
+  //gets all genres
   public getGenreList() {
     return this.genreTable;
   }
 
+  //gets all publishers
   public getPublisherList() {
     return this.publisherTable;
   }
 
-  //returns all stand alone books
+  //gets all stand alone books
   public getStandAloneBooks(): Book[] {
     let singleBooks: Book[] = [];
     for(let i = 0; i < this.booksTable.length; i++) {
@@ -364,7 +371,7 @@ export class DataService {
     return author;
   }
 
-  //returns author of given series
+  //gets author of given series
   public getAuthorBySeries(series: Series): Author {
     let bookId: number = 0;
     let author: Author = this.authorTable[0];
@@ -385,7 +392,7 @@ export class DataService {
     return author;
   }
 
-  //returns all series by given author
+  //gets all series by given author
   public getSeriesByAuthor(author: Author): Series[] {
     let bookIds: number[] = [];
     
@@ -398,7 +405,7 @@ export class DataService {
     return this.getSeriesByBooks(bookIds);
   }
 
-  //returns all series by given genre
+  //gets all series by given genre
   public getSeriesByGenre(genre: Genre): Series[] {
     let bookIds: number[] = [];
     
@@ -411,7 +418,7 @@ export class DataService {
     return this.getSeriesByBooks(bookIds);
   }
 
-  //returns all series by given publishers
+  //gets all series by given publishers
   public getSeriesByPublisher(publisher: Publisher): Series[] {
     let bookIds: number[] = [];
 
@@ -438,7 +445,7 @@ export class DataService {
     return filteredSeries;
   }
 
-  //returns all books in given series
+  //gets all books in given series
   public getBooksBySeries(series: Series): Book[] {
     let seriesBooks: Book[] = [];
     var currentBookId;

@@ -1,18 +1,19 @@
+/*containers for author information*/
 .author-container {
     display: flex;
-    height: fit-content;
-    padding-bottom: 10px;
-    margin-right: 1rem;
     max-width: 100%;
     width: 100vw;
-    margin-top:15px;
 }
 .author-info-container {
     max-width: 100%;
     width: 100vw;
+    height: fit-content;
+    margin-top:15px;
+    padding-bottom: 10px;
     border: 1px solid #30363d;
     border-radius: 5px;
 }
+/*header and link for author*/
 .author-info-container h1 {
     display: flex;
     background-color:#161b22f2;
@@ -21,10 +22,6 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom: 1px solid #30363d;
-}
-.author-info {
-    padding-left: .5rem;
-    padding-right: .5rem;
 }
 a {
     color:white;
@@ -37,6 +34,8 @@ a {
 .fa-solid:hover {
     color:aqua;
 }
-.series-container:last-child {
-    padding-bottom: 1rem;
+/*information for author*/
+.author-info {
+    padding-left: .5rem;
+    padding-right: .5rem;
 }

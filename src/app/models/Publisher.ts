@@ -1,3 +1,4 @@
+/* Model for publisher object */
 export class Publisher {
     PublisherId: number; 
     PublisherName: string;

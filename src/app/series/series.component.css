@@ -1,4 +1,4 @@
-/*Series Information*/
+/*header for series information*/
 .heading {
     display: grid;
     text-align: center;
@@ -8,9 +8,11 @@
   font-size: 50px;
   margin-bottom: 0;
 }
+/*adds space for author page heading display*/
 .author-page {
   margin-bottom: 1rem;
 }
+/*link to author page*/
 .link-container {
   justify-content: center;
 }
@@ -26,7 +28,7 @@
   cursor: pointer;
 }
 
-/* gallery */
+/*gallery of books*/
 .gallery-container {
   width: 100%;
   display: flex;

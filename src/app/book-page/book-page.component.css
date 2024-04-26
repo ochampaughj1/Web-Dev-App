@@ -1,14 +1,17 @@
+/*container holding all book page elements*/
 .book-container {
     display: flex;
     height: 400px;
     width: 100%;
     margin:15px;
 }
+/*book image*/
 .card > img {
     height: 400px;
     width:250px;
     object-fit: cover;
 }
+/*container holding book information and headers*/
 .book-info-container {
     width: 100%;
     margin: 0 1rem 0 1rem;

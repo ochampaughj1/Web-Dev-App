@@ -1,4 +1,4 @@
-/*Series Information*/
+/*header for stand alones*/
 .heading {
     display: grid;
     text-align: center;
@@ -8,6 +8,7 @@
   font-size: 50px;
   margin-bottom: 0;
 }
+/*link to stand alone author*/
 .link-container {
   justify-content: center;
 }
@@ -23,7 +24,7 @@
   cursor: pointer;
 }
 
-/* gallery */
+/*gallery of stand alone books*/
 .gallery-container {
   width: 98vw;
   display: flex;

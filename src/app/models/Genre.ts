@@ -1,3 +1,4 @@
+/* Model for genre object */
 export class Genre {
     GenreId: number; 
     GenreName: string;
