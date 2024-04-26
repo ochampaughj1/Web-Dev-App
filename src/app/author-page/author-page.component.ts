@@ -5,13 +5,15 @@ import { Series } from '../models/Series';
 import { ActivatedRoute } from '@angular/router';
 import { Author } from '../models/Author';
 import { NgFor } from '@angular/common';
+import { Book } from '../models/Book';
+import { StandAloneComponent } from "../stand-alone/stand-alone.component";
 
 @Component({
     selector: 'app-author-page',
     standalone: true,
     templateUrl: './author-page.component.html',
     styleUrl: './author-page.component.css',
-    imports: [SeriesComponent, NgFor]
+    imports: [SeriesComponent, NgFor, StandAloneComponent]
 })
 export class AuthorPageComponent implements OnInit{
 
