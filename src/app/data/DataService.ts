@@ -135,8 +135,8 @@ const ba80 = new BookAuthor(80,13); const sb80 = new SeriesBook(80,16);  const g
 const ba81 = new BookAuthor(81,13); const sb81 = new SeriesBook(81,16);  const ga263 = new BookGenre(81,1);  const ga264 = new BookGenre(81,2);  const ga265 = new BookGenre(81,3);
 const ba82 = new BookAuthor(82,13); const sb82 = new SeriesBook(82,16);  const ga266 = new BookGenre(82,1);  const ga267 = new BookGenre(82,2);  const ga268 = new BookGenre(82,3);
 //Stand Alones
-const ba83 = new BookAuthor(83,14); const ga269 = new BookGenre(8,1);  const ga270 = new BookGenre(8,3);  const ga271 = new BookGenre(8,5);
-const ba84 = new BookAuthor(84,14); const ga272 = new BookGenre(8,1);  const ga273 = new BookGenre(8,3);  const ga274 = new BookGenre(8,5);
+const ba83 = new BookAuthor(83,14); const ga269 = new BookGenre(83,1);  const ga270 = new BookGenre(83,3);  const ga271 = new BookGenre(83,5);
+const ba84 = new BookAuthor(84,14); const ga272 = new BookGenre(84,1);  const ga273 = new BookGenre(84,3);  const ga274 = new BookGenre(84,5);
 
 //**NOT FINISHED (NEEDS PUBLISH YEAR, SUMMARY, AND PAGES FOR REBEL** 
 //Series and Book hard data
@@ -268,6 +268,7 @@ import { Genre } from "../models/Genre";
 import { BookGenre } from "../models/BookGenre";
 import { Publisher } from "../models/Publisher";
 import { SeriesBook } from "../models/SeriesBook";
+import { publish } from "rxjs";
 
 
 @Injectable({providedIn: 'root'})
@@ -420,7 +421,8 @@ export class DataService {
     
     //gets book ids based on genre
     for(let i = 0; i < this.bookGenreTable.length; i++) {
-      if(genre.GenreId == this.bookGenreTable[i].GenreId) {
+      var currentBook = this.bookGenreTable[i].BookId - 1;
+      if(genre.GenreId == this.bookGenreTable[i].GenreId && this.booksTable[currentBook].StandAlone == false) {
         bookIds.push(this.bookGenreTable[i].BookId);
       }
     }
@@ -479,6 +481,29 @@ export class DataService {
     }
     return authorBooks;
   }
+
+  public getBooksByGenre(genre: Genre): Book[] {
+    let genreBooks: Book[] = [];
+    for(let i = 0; i < this.bookGenreTable.length; i++) {
+      if(genre.GenreId == this.bookGenreTable[i].GenreId) {
+        var currentBookId = this.bookGenreTable[i].BookId;
+        genreBooks.push(this.booksTable[currentBookId - 1]);
+      }
+    }
+    return genreBooks;
+  }
+
+  public getBooksByPublisher(publisher: Publisher): Book[] {
+    let pubBooks: Book[] = [];
+    for(let i = 0; i < this.booksTable.length; i++) {
+      if(publisher.PublisherId == this.booksTable[i].PublisherId) {
+        var currentBookId = this.booksTable[i].BookId;
+        pubBooks.push(this.booksTable[currentBookId - 1]);
+      }
+    }
+    return pubBooks;
+  }
+
 
   //NOT FULLY TESTED, NEED TO ADD MORE STAND ALONE BOOKS
   public getStandAloneBookAuthors(books: Book[]): Author[] {

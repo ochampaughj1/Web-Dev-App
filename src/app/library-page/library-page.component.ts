@@ -53,10 +53,14 @@ export class LibraryPageComponent {
       this.updateFilteredSeriesList(seriesResult);
     }
     else if(this.genreList.includes(selection)) {
+      standAloneResult = this.dataService.getBooksByGenre(selection);
+      this.updateFilteredStandAloneList(standAloneResult);
       seriesResult = this.dataService.getSeriesByGenre(selection);
       this.updateFilteredSeriesList(seriesResult);
     }
     else if(this.publisherList.includes(selection)) {
+      standAloneResult = this.dataService.getBooksByPublisher(selection);
+      this.updateFilteredStandAloneList(standAloneResult);
       seriesResult = this.dataService.getSeriesByPublisher(selection);
       this.updateFilteredSeriesList(seriesResult);
     }
