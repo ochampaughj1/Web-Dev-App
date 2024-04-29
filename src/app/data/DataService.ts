@@ -268,7 +268,6 @@ import { Genre } from "../models/Genre";
 import { BookGenre } from "../models/BookGenre";
 import { Publisher } from "../models/Publisher";
 import { SeriesBook } from "../models/SeriesBook";
-import { publish } from "rxjs";
 
 
 @Injectable({providedIn: 'root'})

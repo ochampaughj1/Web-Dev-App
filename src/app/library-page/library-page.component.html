@@ -7,18 +7,24 @@
       <ul>
         <!--Authors-->
         <li>Authors:</li>
-        <div *ngFor="let author of authorList" class="filter-option">
-          <input type="checkbox" (change)="filterSeries(author)">{{author.AuthorName}}
+        <div class="filter-container">
+          <div *ngFor="let author of authorList" class="filter-option">
+            <input type="checkbox" (change)="filterSeries(author)">{{author.AuthorName}}
+          </div>
         </div>
         <!--Genres-->
-        <li>Genre</li>
-        <div *ngFor="let genre of genreList" class="filter-option">
-          <input type="checkbox" (change)="filterSeries(genre)">{{genre.GenreName}}
+        <li>Genre:</li>
+        <div class="filter-container">
+          <div *ngFor="let genre of genreList" class="filter-option">
+            <input type="checkbox" (change)="filterSeries(genre)">{{genre.GenreName}}
+          </div>
         </div>
         <!--Publishers-->
-        <li>Publisher</li>
-        <div *ngFor="let publisher of publisherList" class="filter-option">
-          <input type="checkbox" (change)="filterSeries(publisher)">{{publisher.PublisherName}}
+        <li>Publisher:</li>
+        <div class="filter-container">
+          <div *ngFor="let publisher of publisherList" class="filter-option">
+            <input type="checkbox" (change)="filterSeries(publisher)">{{publisher.PublisherName}}
+          </div>
         </div>
       </ul>
   </div>
@@ -28,7 +34,7 @@
   <div *ngFor="let currentSeries of filteredSeriesList;">
     <app-series [series]=currentSeries></app-series>
   </div>
-  <h1>Stand Alone Books (NEED TO ADD FILTERS AND CLEAN UP DESIGN)</h1>
+  <div *ngIf="filteredAuthorList.length > 0"><h1>Stand Alone Books</h1></div>
   <div *ngFor="let currentAuthor of filteredAuthorList">
     <app-stand-alone [standAloneAuthor]="currentAuthor" [standAloneBooksList]="filteredStandAloneList"></app-stand-alone>
   </div>
@@ -38,7 +44,7 @@
   <div *ngFor="let currentSeries of seriesList;">
     <app-series [series]=currentSeries></app-series>
   </div>
-  <h1>Stand Alone Books (NEED TO ADD FILTERS AND CLEAN UP DESIGN)</h1>
+  <h1>Stand Alone Books</h1>
   <div *ngFor="let currentAuthor of standAloneBookAuthors">
     <app-stand-alone [standAloneAuthor]="currentAuthor" [standAloneBooksList]="standAloneBooks"></app-stand-alone>
   </div>

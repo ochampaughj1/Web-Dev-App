@@ -29,3 +29,7 @@
 .book-info {
     padding-left: 1rem;
 }
+
+.summary {
+    white-space: pre-wrap;
+}

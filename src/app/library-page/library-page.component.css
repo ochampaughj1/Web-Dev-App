@@ -33,7 +33,36 @@
     padding-right: 5px;
 }
 
+.dropdown-content li {
+    font-weight: bold;
+    list-style: none;
+    text-decoration: underline;
+    margin-top: 1rem;
+}
+
 /*displays hidden dropdown content (uses JS script to toggle class)*/
 .show {
     display:block;
+}
+
+/*handles filter overflow and scroll bar*/
+.filter-container {
+    max-height: 8rem;
+    overflow-y: auto;
+}
+.filter-container::-webkit-scrollbar {
+    background: #30363d;
+    width: 3px;
+}
+.filter-container::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 5px;
+}
+
+/*stand alone book header*/
+h1 {
+    display: flex; 
+    justify-content: center;
+    margin-bottom: 0;
+    font-size: 50px;
 }

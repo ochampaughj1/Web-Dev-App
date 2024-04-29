@@ -9,6 +9,8 @@
         </h1>
         <!--author informations and books/series-->
         <div class="author-info">
+            <p>For more information about {{author.AuthorName}}'s books, click the link above the visit their personal website <br> <br>Listed below are all of {{author.AuthorName}}'s books that I own in my own Library:</p>
+            <!--stand alone & series galleries-->
             <div *ngFor="let currentSeries of seriesList;">
                 <app-series [series]=currentSeries [displayType]="type"></app-series>
             </div>

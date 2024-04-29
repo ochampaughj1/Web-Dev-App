@@ -3,3 +3,12 @@ body {
     background-color: #161b22f2;
     color: white;
 }
+body::-webkit-scrollbar {
+    background: #30363d;
+    width: 5px;
+    height: 5px;
+}
+body::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 5px;
+}
