@@ -28,6 +28,10 @@
   <div *ngFor="let currentSeries of filteredSeriesList;">
     <app-series [series]=currentSeries></app-series>
   </div>
+  <h1>Stand Alone Books (NEED TO ADD FILTERS AND CLEAN UP DESIGN)</h1>
+  <div *ngFor="let currentAuthor of filteredAuthorList">
+    <app-stand-alone [standAloneAuthor]="currentAuthor" [standAloneBooksList]="filteredStandAloneList"></app-stand-alone>
+  </div>
 </div>
 <!--Displays all series-->
 <ng-template #elseBlock>
@@ -36,6 +40,6 @@
   </div>
   <h1>Stand Alone Books (NEED TO ADD FILTERS AND CLEAN UP DESIGN)</h1>
   <div *ngFor="let currentAuthor of standAloneBookAuthors">
-    <app-stand-alone [standAloneAuthor]="currentAuthor"></app-stand-alone>
+    <app-stand-alone [standAloneAuthor]="currentAuthor" [standAloneBooksList]="standAloneBooks"></app-stand-alone>
   </div>
 </ng-template>

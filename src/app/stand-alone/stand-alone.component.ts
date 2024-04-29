@@ -20,14 +20,15 @@ export class StandAloneComponent implements OnInit{
 
   //variables to hold stand alone info
   @Input() standAloneAuthor: any;
-  standAloneBooksList: Book[] = [];
+  @Input() standAloneBooksList:any;
+
+  booksList: Book[] = [];
 
   //initializes global variables
   ngOnInit(): void {
-    var books = this.dataService.getStandAloneBooks();
-    for(let i = 0; i < books.length; i++) {
-      if(this.dataService.getBookAuthor(books[i]) == this.standAloneAuthor) {
-        this.standAloneBooksList.push(books[i]);
+    for(let i = 0; i < this.standAloneBooksList.length; i++) {
+      if(this.dataService.getBookAuthor(this.standAloneBooksList[i]) == this.standAloneAuthor) {
+        this.booksList.push(this.standAloneBooksList[i]);
       }
     }
   }

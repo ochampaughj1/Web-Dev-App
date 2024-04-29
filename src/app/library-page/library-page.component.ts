@@ -37,6 +37,7 @@ export class LibraryPageComponent {
   //filter items lists for updating page
   filteredSeriesList: Series[] = [];
   filteredStandAloneList: Book[] = [];
+  filteredAuthorList: Author[] = [];
   filterActive: boolean = false;
 
   //filters series
@@ -44,18 +45,20 @@ export class LibraryPageComponent {
   filterSeries(selection:any) {
     this.checkFilterActive();
 
-    var result;
+    var seriesResult, standAloneResult;
     if(this.authorList.includes(selection)) {
-      result = this.dataService.getSeriesByAuthor(selection);
-      this.updateFilteredSeriesList(result);
+      standAloneResult = this.dataService.getBooksByAuthor(selection);
+      this.updateFilteredStandAloneList(standAloneResult);
+      seriesResult = this.dataService.getSeriesByAuthor(selection);
+      this.updateFilteredSeriesList(seriesResult);
     }
     else if(this.genreList.includes(selection)) {
-      result = this.dataService.getSeriesByGenre(selection);
-      this.updateFilteredSeriesList(result);
+      seriesResult = this.dataService.getSeriesByGenre(selection);
+      this.updateFilteredSeriesList(seriesResult);
     }
     else if(this.publisherList.includes(selection)) {
-      result = this.dataService.getSeriesByPublisher(selection);
-      this.updateFilteredSeriesList(result);
+      seriesResult = this.dataService.getSeriesByPublisher(selection);
+      this.updateFilteredSeriesList(seriesResult);
     }
   }
 
@@ -78,6 +81,24 @@ export class LibraryPageComponent {
       else {
         var index = this.filteredSeriesList.indexOf(series[i]);
         this.filteredSeriesList.splice(index, 1); 
+      }
+    }
+  }
+
+  //update stand alones off filters
+  updateFilteredStandAloneList(books: Book[]) {
+    for(let i = 0; i < books.length; i++) {
+      if(books[i].StandAlone == true) {
+        if(!this.filteredStandAloneList.includes(books[i])) {
+          this.filteredStandAloneList.push(books[i]);
+          if(!this.filteredAuthorList.includes(this.dataService.getBookAuthor(books[i]))) {
+            this.filteredAuthorList.push(this.dataService.getBookAuthor(books[i]))
+          }
+        }
+        else {
+          var index = this.filteredStandAloneList.indexOf(books[i]);
+          this.filteredStandAloneList.splice(index, 1); 
+        }
       }
     }
   }
