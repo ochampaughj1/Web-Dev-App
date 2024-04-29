@@ -360,6 +360,15 @@ export class DataService {
     return singleBooks;
   }
 
+  //gets books by book Id
+  public getBooksById(bookIds: number[]): Book[] {
+    let booksList: Book[] = [];
+    for(let i = 0; i < bookIds.length; i++) {
+      booksList.push(this.booksTable[bookIds[i] - 1]);
+    }
+    return booksList;
+  }
+
   //gets author of given book
   public getBookAuthor(book: Book): Author {
     let author: any; 
@@ -456,6 +465,19 @@ export class DataService {
       }
     }
     return seriesBooks;
+  }
+
+  //gets all book by author
+  public getBooksByAuthor(author: Author): Book[] {
+    let authorBooks: Book[] = [];
+    var currentBookId; 
+    for(let i = 0; i < this.bookAuthorTable.length; i++) {
+      currentBookId = this.bookAuthorTable[i].BookId;
+      if(author.AuthorId == this.bookAuthorTable[i].AuthorId) {
+        authorBooks.push(this.booksTable[currentBookId - 1]);
+      }
+    }
+    return authorBooks;
   }
 
   //NOT FULLY TESTED, NEED TO ADD MORE STAND ALONE BOOKS

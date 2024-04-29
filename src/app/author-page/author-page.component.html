@@ -12,6 +12,11 @@
             <div *ngFor="let currentSeries of seriesList;">
                 <app-series [series]=currentSeries [displayType]="type"></app-series>
             </div>
+            <div class="gallery-container">
+                <div *ngFor="let currentBook of standAlones;">
+                    <app-book [book]=currentBook></app-book>
+                </div>
+            </div>
         </div>    
     </div>
 </div>

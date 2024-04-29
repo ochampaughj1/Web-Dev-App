@@ -39,3 +39,13 @@ a {
     padding-left: .5rem;
     padding-right: .5rem;
 }
+
+
+
+.gallery-container {
+    width: 100%;
+    display: flex;
+    margin-top: 1.25rem;
+    gap: 1.25rem;
+    justify-content: center;
+  }
