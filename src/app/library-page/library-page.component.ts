@@ -92,12 +92,16 @@ export class LibraryPageComponent {
         if(!this.filteredStandAloneList.includes(books[i])) {
           this.filteredStandAloneList.push(books[i]);
           if(!this.filteredAuthorList.includes(this.dataService.getBookAuthor(books[i]))) {
-            this.filteredAuthorList.push(this.dataService.getBookAuthor(books[i]))
+            this.filteredAuthorList.push(this.dataService.getBookAuthor(books[i]));
           }
         }
         else {
           var index = this.filteredStandAloneList.indexOf(books[i]);
-          this.filteredStandAloneList.splice(index, 1); 
+          this.filteredStandAloneList.splice(index, 1);
+          if(this.filteredAuthorList.includes(this.dataService.getBookAuthor(books[i]))) {
+            var authorIndex = this.filteredAuthorList.indexOf(this.dataService.getBookAuthor(books[i]));
+            this.filteredAuthorList.splice(authorIndex, 1);
+          } 
         }
       }
     }
