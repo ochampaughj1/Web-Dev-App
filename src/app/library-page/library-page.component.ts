@@ -39,9 +39,10 @@ export class LibraryPageComponent {
   filteredStandAloneList: Book[] = [];
   filteredAuthorList: Author[] = [];
   filterActive: boolean = false;
+  activeFilters: any;
 
-  //filters series
-  //FILTER DOESNT WORK FOR STANDALONES!!!
+  //filters series and standalones
+  //FILTERS ONLY BY GROUP, NO CROSS FILTERING YET
   filterSeries(selection:any) {
     this.checkFilterActive();
 
@@ -75,6 +76,7 @@ export class LibraryPageComponent {
       this.filterActive = false;
     }
   }
+
 
   //updates series list off filters
   updateFilteredSeriesList(series: Series[]) { 
