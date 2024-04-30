@@ -401,6 +401,42 @@ export class DataService {
     return author;
   }
 
+  //NEED TO REWRITE TO GET ALL GENRES
+  public getGenresBySeries(series: Series): Genre[] {
+    let bookId: number = 0;
+    let genres: Genre[] = [];
+    for(let i = 0; i < this.seriesBookTable.length; i++) {
+      if(series.SeriesId == this.seriesBookTable[i].SeriesId) {
+        bookId = this.seriesBookTable[i].BookId;
+        break;
+      }
+    }
+    
+    var genreId;
+    for(let i = 0; i < this.bookGenreTable.length; i++) {
+      if(bookId == this.bookGenreTable[i].BookId) {
+        genreId = this.bookGenreTable[i].GenreId;
+        genres.push(this.genreTable[genreId-1])
+      }
+    }
+    return genres;
+  }
+
+  //gets publisher of given series
+  public getPublisherBySeries(series: Series): Publisher {
+    let bookId: number = 0;
+    let publisher: Publisher = this.publisherTable[0];
+    for(let i = 0; i < this.seriesBookTable.length; i++) {
+      if(series.SeriesId == this.seriesBookTable[i].SeriesId) {
+        bookId = this.seriesBookTable[i].BookId;
+        break;
+      }
+    }
+    let publisherId = this.booksTable[bookId-1].PublisherId;
+    publisher = this.publisherTable[publisherId-1];
+    return publisher;
+  }
+
   //gets all series by given author
   public getSeriesByAuthor(author: Author): Series[] {
     let bookIds: number[] = [];

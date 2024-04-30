@@ -39,31 +39,49 @@ export class LibraryPageComponent {
   filteredStandAloneList: Book[] = [];
   filteredAuthorList: Author[] = [];
   filterActive: boolean = false;
-  activeFilters: any;
+  activeFilters: (Author | Genre | Publisher)[] = [];
+  filterTypeCount: number[] = [0,0,0];
 
   //filters series and standalones
   //FILTERS ONLY BY GROUP, NO CROSS FILTERING YET
-  filterSeries(selection:any) {
+  applyFilters(selection:any) {
     this.checkFilterActive();
+    
+    let saBooks: Book[] = [];
+    let series: Series[] = [];
+    if(selection instanceof Author) {
+      saBooks = this.dataService.getBooksByAuthor(selection);
+      series = this.dataService.getSeriesByAuthor(selection);
+    }
+    else if(selection instanceof Genre) {
+      saBooks = this.dataService.getBooksByGenre(selection);
+      series = this.dataService.getSeriesByGenre(selection);
+    }
+    else if(selection instanceof Publisher) {
+      saBooks = this.dataService.getBooksByPublisher(selection);
+      series = this.dataService.getSeriesByPublisher(selection);
+    }
 
-    var seriesResult, standAloneResult;
-    if(this.authorList.includes(selection)) {
-      standAloneResult = this.dataService.getBooksByAuthor(selection);
-      this.updateFilteredStandAloneList(standAloneResult);
-      seriesResult = this.dataService.getSeriesByAuthor(selection);
-      this.updateFilteredSeriesList(seriesResult);
+    this.updateActiveFilters(selection, series);
+    this.updateFilteredStandAloneList(saBooks);
+  }
+
+  //updates list of active filters
+  updateActiveFilters(filter: Author | Genre | Publisher, series: Series[]) {
+    if(!this.activeFilters.includes(filter)) {
+      this.activeFilters.push(filter);
+      if(filter instanceof Author) {this.filterTypeCount[0]++}
+      else if(filter instanceof Genre) {this.filterTypeCount[1]++}
+      else if(filter instanceof Publisher) {this.filterTypeCount[2]++}
+      this.updateFilteredSeries(series);
     }
-    else if(this.genreList.includes(selection)) {
-      standAloneResult = this.dataService.getBooksByGenre(selection);
-      this.updateFilteredStandAloneList(standAloneResult);
-      seriesResult = this.dataService.getSeriesByGenre(selection);
-      this.updateFilteredSeriesList(seriesResult);
-    }
-    else if(this.publisherList.includes(selection)) {
-      standAloneResult = this.dataService.getBooksByPublisher(selection);
-      this.updateFilteredStandAloneList(standAloneResult);
-      seriesResult = this.dataService.getSeriesByPublisher(selection);
-      this.updateFilteredSeriesList(seriesResult);
+    else {
+      var index = this.activeFilters.indexOf(filter);
+      this.activeFilters.splice(index, 1);
+      if(filter instanceof Author) {this.filterTypeCount[0]--}
+      else if(filter instanceof Genre) {this.filterTypeCount[1]--}
+      else if(filter instanceof Publisher) {this.filterTypeCount[2]--}
+      this.updateFilteredSeries(series);
     }
   }
 
@@ -77,8 +95,7 @@ export class LibraryPageComponent {
     }
   }
 
-
-  //updates series list off filters
+  //updates filtered series list
   updateFilteredSeriesList(series: Series[]) { 
     for(let i = 0; i < series.length; i++) {
       if(!this.filteredSeriesList.includes(series[i])) {
@@ -88,6 +105,84 @@ export class LibraryPageComponent {
         var index = this.filteredSeriesList.indexOf(series[i]);
         this.filteredSeriesList.splice(index, 1); 
       }
+    }
+  }
+
+
+  /*******************COMBINATION FILTER METHOD *******************************/
+  //NEEDS TO CORRECTLY UPDATE CURRENT FILTERED SERIES LIST
+  updateFilteredSeries(series: Series[]) {
+    let filters = this.filterTypeCount;
+    let filteredSeries: Series[] = [];
+    var currentAuthor, currentGenres, currentPublisher;
+
+    if(filters[0] >= 1 && filters[1] == 0 && filters[2] == 0) {
+      //author
+      this.updateFilteredSeriesList(series);
+    }
+    else if(filters[0] == 0 && filters[1] >= 1 && filters[2] == 0) {
+      //genre
+      this.updateFilteredSeriesList(series);
+    }
+    else if(filters[0] == 0 && filters[1] == 0 && filters[2] >= 1) {
+      //pub
+      this.updateFilteredSeriesList(series);
+    }
+    else if(filters[0] >= 1 && filters[1] >= 1 && filters[2] == 0) {
+      //author, genre
+      for(let i = 0; i < series.length; i++) {
+        currentAuthor = this.dataService.getAuthorBySeries(series[i]);
+        currentGenres = this.dataService.getGenresBySeries(series[i]);
+        for(let j = 0; j < currentGenres.length; j++) {
+          if(this.activeFilters.includes(currentGenres[j]) && this.activeFilters.includes(currentAuthor)) {
+            filteredSeries.push(series[i]);
+          }
+        }
+      }
+    }
+    else if(filters[0] >= 1 && filters[1] == 0 && filters[2] >= 1) {
+      //author, pub
+      for(let i = 0; i < series.length; i++) {
+        currentAuthor = this.dataService.getAuthorBySeries(series[i]);
+        currentPublisher = this.dataService.getPublisherBySeries(series[i]);
+        if(this.activeFilters.includes(currentAuthor) && this.activeFilters.includes(currentPublisher)) {
+          filteredSeries.push(series[i]);
+          break;
+        }
+      }
+    } 
+    else if(filters[0] == 0 && filters[1] >= 1 && filters[2] >= 1) {
+      //genre, pub
+      for(let i = 0; i < series.length; i++) {
+        currentPublisher = this.dataService.getPublisherBySeries(series[i]);
+        currentGenres = this.dataService.getGenresBySeries(series[i]);
+        for(let j = 0; j < currentGenres.length; j++) {
+          if(this.activeFilters.includes(currentGenres[j]) && this.activeFilters.includes(currentPublisher)) {
+            filteredSeries.push(series[i]);
+            break;
+          }
+        }
+      }
+    }
+    else if(filters[0] >= 1 && filters[1] >= 1 && filters[2] >= 1) {
+      //all
+      for(let i = 0; i < series.length; i++) {
+        currentAuthor = this.dataService.getAuthorBySeries(series[i]);
+        currentGenres = this.dataService.getGenresBySeries(series[i]);
+        currentPublisher = this.dataService.getPublisherBySeries(series[i]);
+        for(let j = 0; j < currentGenres.length; j++) {
+          if(this.activeFilters.includes(currentGenres[j]) && this.activeFilters.includes(currentAuthor) && this.activeFilters.includes(currentPublisher)) {
+            filteredSeries.push(series[i]);
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  sendAlerts(series: Series[]) {
+    for(let i = 0; i < series.length; i++) {
+      alert(series[i].Title);
     }
   }
 
