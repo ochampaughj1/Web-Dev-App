@@ -30,6 +30,14 @@
     padding-left: 1rem;
 }
 
+.author-link {
+    text-decoration: none;
+    color: white;
+  }
+  .author-link:hover {
+    color: aqua;
+    cursor: pointer;
+  }
 .summary {
     white-space: pre-wrap;
 }

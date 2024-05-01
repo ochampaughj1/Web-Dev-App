@@ -6,7 +6,9 @@
     </div>
     <!--book information-->
     <div class="book-info-container">
-        <h1>{{book.Title}} by {{author.AuthorName}}</h1>
+        <h1>{{book.Title}} by 
+                <a class="author-link" href={{author.AuthorLink}}>{{author.AuthorName}}</a>
+        </h1>
         <div class="book-info">
             <p>Pages: {{book.Pages}}</p>
             <p>Published: {{book.PublishYear}}</p>

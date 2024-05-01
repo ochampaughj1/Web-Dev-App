@@ -21,10 +21,6 @@ export class LibraryPageComponent {
   //initializes data service to get data
   constructor(private dataService: DataService) {}
 
-
-  /* NEED TO IMPLEMENT SORT METHOD AND STANDALONE BOOK PASSING
-     ALSO NEED TO IMPLEMENT STAND ALONE FILTERS */
-
   //master lists for books, authors, series, and stand alones from data service
   seriesList: Series[] = this.dataService.getSeriesList();
   booksList: Book[] = this.dataService.getBookList();
@@ -43,10 +39,9 @@ export class LibraryPageComponent {
   activeGenres: Genre[] = [];
   filterTypeCount: number[] = [0,0,0];
 
-  //filters series and standalones
+  //Updates active filters
   applyFilters(selection: Author | Genre | Publisher) {
     this.checkFilterActive();
-
     if(!this.activeFilters.includes(selection)) {
       this.activeFilters.push(selection);
       if(selection instanceof Author) { this.filterTypeCount[0]++; }
@@ -69,15 +64,14 @@ export class LibraryPageComponent {
     }
     this.updateFilteredSeries();
     this.updateFilteredStandAlones();
-    //this.updateFilteredStandAloneList(saBooks);
   }
-
+  
   //checks if any filter checkboxes are checked
   checkFilterActive() {
     if(document.querySelectorAll("input:checked").length > 0) { this.filterActive = true; }
     else { this.filterActive = false; }
   }
-
+  
   //all possible series that fit any filters
   retrievePossibleSeries(): Series[] {
     var filter;
@@ -123,7 +117,7 @@ export class LibraryPageComponent {
   }
 
 
-  /******************* COMBINATION FILTER METHOD *******************************/
+  //updates the series by selected filters
   updateFilteredSeries() {
     let filteredSeries: Series[] = [];
     let currentGenres: Genre[] = [], currentAuthor, currentPublisher;
@@ -204,9 +198,27 @@ export class LibraryPageComponent {
       }
     }
     this.filteredSeriesList = filteredSeries;
+    //this.sortArray(filteredSeries);
   }
 
+  //sorts array by author name alphabetically
+  sortArray(series: Series[]) {
+    var author1, author2;
+    for(let i = 0; i < series.length; i++) {
+      for(let j = 0; j < series.length; j++) {
+        author1 = this.dataService.getAuthorBySeries(series[i]);
+        author2 = this.dataService.getAuthorBySeries(series[j]);
+        if(author1.AuthorName < author2.AuthorName) {
+          var temp = series[i];
+          series[i] = series[j];
+          series[j] = temp;
+        }
+      }
+    }
+    this.filteredSeriesList = series;
+  }
 
+  //updates stand alones by selected filters
   updateFilteredStandAlones() {
     let filteredBooks: Book[] = [];
     let currentGenres: Genre[] = [], currentAuthor, currentPublisher;
@@ -298,7 +310,7 @@ export class LibraryPageComponent {
     this.updateFilteredAuthorList(filteredBooks);
   }
 
-  //update stand alones off filters
+  //updates stand alone authors
   updateFilteredAuthorList(books: Book[]) {
     let authorList: Author[] = [];
     var author;
