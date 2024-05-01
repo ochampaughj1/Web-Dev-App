@@ -287,6 +287,7 @@ export class LibraryPageComponent {
           if(this.activeGenres.every(g => currentGenres.includes(g)) && this.activeFilters.includes(currentAuthor) 
             && this.activeFilters.includes(currentPublisher) && books[i].StandAlone == true) {
           if(!filteredBooks.includes(books[i])) {
+              alert(currentPublisher.PublisherName)
               filteredBooks.push(books[i]);
             }
           }
