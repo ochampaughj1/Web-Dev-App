@@ -90,21 +90,21 @@ const ba42 = new BookAuthor(42, 6); const sb42 = new SeriesBook(42,9);  const ga
 const ba43 = new BookAuthor(43, 6); const sb43 = new SeriesBook(43,9);  const ga136 = new BookGenre(43,1);  const ga137 = new BookGenre(43,3);  const ga138 = new BookGenre(43,5);
 const ba44 = new BookAuthor(44, 6); const sb44 = new SeriesBook(44,9);  const ga139 = new BookGenre(44,1);  const ga140 = new BookGenre(44,3);  const ga141 = new BookGenre(44,5);
 //The Conspiracy Chronicles
-const ba45 = new BookAuthor(45,7); const sb45 = new SeriesBook(45,10);  const ga142 = new BookGenre(4,1); const ga143 = new BookGenre(4,3);  const ga144 = new BookGenre(4,5);
-const ba46 = new BookAuthor(46,7); const sb46 = new SeriesBook(46,10);  const ga145 = new BookGenre(4,1); const ga146 = new BookGenre(4,3);  const ga147 = new BookGenre(4,5);
-const ba47 = new BookAuthor(47,7); const sb47 = new SeriesBook(47,10);  const ga148 = new BookGenre(4,1); const ga149 = new BookGenre(4,3);  const ga150 = new BookGenre(4,5);
-const ba48 = new BookAuthor(48,7); const sb48 = new SeriesBook(48,10);  const ga151 = new BookGenre(4,1); const ga152 = new BookGenre(4,3);  const ga153 = new BookGenre(4,5);
-const ba49 = new BookAuthor(49,7); const sb49 = new SeriesBook(49,10);  const ga154 = new BookGenre(4,1); const ga155 = new BookGenre(4,3);  const ga156 = new BookGenre(4,5);
-const ba50 = new BookAuthor(50,7); const sb50 = new SeriesBook(50,10);  const ga157 = new BookGenre(5,1); const ga158 = new BookGenre(5,3);  const ga159 = new BookGenre(5,5);
-const ba51 = new BookAuthor(51,7); const sb51 = new SeriesBook(51,10);  const ga160 = new BookGenre(5,1); const ga161 = new BookGenre(5,3);  const ga162 = new BookGenre(5,5);
-const ba52 = new BookAuthor(52,7); const sb52 = new SeriesBook(52,10);  const ga163 = new BookGenre(5,1); const ga164 = new BookGenre(5,3);  const ga165 = new BookGenre(5,5);
-const ba53 = new BookAuthor(53,7); const sb53 = new SeriesBook(53,10);  const ga166 = new BookGenre(5,1); const ga167 = new BookGenre(5,3);  const ga168 = new BookGenre(5,5);
-const ba54 = new BookAuthor(54,7); const sb54 = new SeriesBook(54,10);  const ga169 = new BookGenre(5,1); const ga170 = new BookGenre(5,3);  const ga171 = new BookGenre(5,5);
-const ba55 = new BookAuthor(55,7); const sb55 = new SeriesBook(55,10);  const ga172 = new BookGenre(5,1); const ga173 = new BookGenre(5,3);  const ga174 = new BookGenre(5,5); 
-const ba56 = new BookAuthor(56,7); const sb56 = new SeriesBook(56,10);  const ga175 = new BookGenre(5,1); const ga176 = new BookGenre(5,3);  const ga177 = new BookGenre(5,5);
-const ba57 = new BookAuthor(57,7); const sb57 = new SeriesBook(57,10);  const ga178 = new BookGenre(5,1); const ga179 = new BookGenre(5,3);  const ga180 = new BookGenre(5,5);
-const ba58 = new BookAuthor(58,7); const sb58 = new SeriesBook(58,10);  const ga181 = new BookGenre(5,1); const ga182 = new BookGenre(5,3);  const ga183 = new BookGenre(5,5);
-const ba59 = new BookAuthor(59,7); const sb59 = new SeriesBook(59,10);  const ga184 = new BookGenre(5,1); const ga185 = new BookGenre(5,3);  const ga186 = new BookGenre(5,5);
+const ba45 = new BookAuthor(45,7); const sb45 = new SeriesBook(45,10);  const ga142 = new BookGenre(45,1); const ga143 = new BookGenre(45,3);  const ga144 = new BookGenre(45,5);
+const ba46 = new BookAuthor(46,7); const sb46 = new SeriesBook(46,10);  const ga145 = new BookGenre(46,1); const ga146 = new BookGenre(46,3);  const ga147 = new BookGenre(46,5);
+const ba47 = new BookAuthor(47,7); const sb47 = new SeriesBook(47,10);  const ga148 = new BookGenre(47,1); const ga149 = new BookGenre(47,3);  const ga150 = new BookGenre(47,5);
+const ba48 = new BookAuthor(48,7); const sb48 = new SeriesBook(48,10);  const ga151 = new BookGenre(48,1); const ga152 = new BookGenre(48,3);  const ga153 = new BookGenre(48,5);
+const ba49 = new BookAuthor(49,7); const sb49 = new SeriesBook(49,10);  const ga154 = new BookGenre(49,1); const ga155 = new BookGenre(49,3);  const ga156 = new BookGenre(49,5);
+const ba50 = new BookAuthor(50,7); const sb50 = new SeriesBook(50,10);  const ga157 = new BookGenre(50,1); const ga158 = new BookGenre(50,3);  const ga159 = new BookGenre(50,5);
+const ba51 = new BookAuthor(51,7); const sb51 = new SeriesBook(51,10);  const ga160 = new BookGenre(51,1); const ga161 = new BookGenre(51,3);  const ga162 = new BookGenre(51,5);
+const ba52 = new BookAuthor(52,7); const sb52 = new SeriesBook(52,10);  const ga163 = new BookGenre(52,1); const ga164 = new BookGenre(52,3);  const ga165 = new BookGenre(52,5);
+const ba53 = new BookAuthor(53,7); const sb53 = new SeriesBook(53,10);  const ga166 = new BookGenre(53,1); const ga167 = new BookGenre(53,3);  const ga168 = new BookGenre(53,5);
+const ba54 = new BookAuthor(54,7); const sb54 = new SeriesBook(54,10);  const ga169 = new BookGenre(54,1); const ga170 = new BookGenre(54,3);  const ga171 = new BookGenre(54,5);
+const ba55 = new BookAuthor(55,7); const sb55 = new SeriesBook(55,10);  const ga172 = new BookGenre(55,1); const ga173 = new BookGenre(55,3);  const ga174 = new BookGenre(55,5); 
+const ba56 = new BookAuthor(56,7); const sb56 = new SeriesBook(56,10);  const ga175 = new BookGenre(56,1); const ga176 = new BookGenre(56,3);  const ga177 = new BookGenre(56,5);
+const ba57 = new BookAuthor(57,7); const sb57 = new SeriesBook(57,10);  const ga178 = new BookGenre(57,1); const ga179 = new BookGenre(57,3);  const ga180 = new BookGenre(57,5);
+const ba58 = new BookAuthor(58,7); const sb58 = new SeriesBook(58,10);  const ga181 = new BookGenre(58,1); const ga182 = new BookGenre(58,3);  const ga183 = new BookGenre(58,5);
+const ba59 = new BookAuthor(59,7); const sb59 = new SeriesBook(59,10);  const ga184 = new BookGenre(59,1); const ga185 = new BookGenre(59,3);  const ga186 = new BookGenre(59,5);
 //Divergent
 const ba60 = new BookAuthor(60,8); const sb60 = new SeriesBook(60,11);  const ga187 = new BookGenre(60,1); const ga188 = new BookGenre(60,3);  const ga189 = new BookGenre(60,5);
 const ba61 = new BookAuthor(61,8); const sb61 = new SeriesBook(61,11);  const ga190 = new BookGenre(61,1); const ga191 = new BookGenre(61,3);  const ga192 = new BookGenre(61,5);
@@ -369,6 +369,16 @@ export class DataService {
     return booksList;
   }
 
+  //get publisher by publisher Id
+  public getPublisherById(publisherId: number): Publisher {
+    for(let i = 0; i < this.publisherTable.length; i++) {
+      if(this.publisherTable[i].PublisherId == publisherId) {
+        return this.publisherTable[i];
+      }
+    }
+    return this.publisherTable[0];
+  }
+
   //gets author of given book
   public getBookAuthor(book: Book): Author {
     let author: any; 
@@ -401,7 +411,7 @@ export class DataService {
     return author;
   }
 
-  //NEED TO REWRITE TO GET ALL GENRES
+  //gets all genres for a given series
   public getGenresBySeries(series: Series): Genre[] {
     let bookId: number = 0;
     let genres: Genre[] = [];
@@ -415,6 +425,19 @@ export class DataService {
     var genreId;
     for(let i = 0; i < this.bookGenreTable.length; i++) {
       if(bookId == this.bookGenreTable[i].BookId) {
+        genreId = this.bookGenreTable[i].GenreId;
+        genres.push(this.genreTable[genreId-1])
+      }
+    }
+    return genres;
+  }
+
+  //gets all genres for given book
+  public getGenresByBook(book: Book): Genre[] {
+    let genres: Genre[] = [];
+    var genreId;
+    for(let i = 0; i < this.bookGenreTable.length; i++) {
+      if(book.BookId == this.bookGenreTable[i].BookId) {
         genreId = this.bookGenreTable[i].GenreId;
         genres.push(this.genreTable[genreId-1])
       }
@@ -440,10 +463,11 @@ export class DataService {
   //gets all series by given author
   public getSeriesByAuthor(author: Author): Series[] {
     let bookIds: number[] = [];
-    
+    var currentBook;
     //gets book ids based on author
     for(let i = 0; i < this.bookAuthorTable.length; i++) {
-      if(author.AuthorId == this.bookAuthorTable[i].AuthorId) {
+      currentBook = this.booksTable[this.bookAuthorTable[i].BookId-1];
+      if(author.AuthorId == this.bookAuthorTable[i].AuthorId && currentBook.StandAlone == false) {
         bookIds.push(this.bookAuthorTable[i].BookId);
       }
     }
