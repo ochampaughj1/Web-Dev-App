@@ -494,7 +494,7 @@ export class DataService {
 
     //gets bookIds based on publisher
     for(let i = 0; i < this.booksTable.length; i++) {
-      if(publisher.PublisherId == this.booksTable[i].PublisherId) {
+      if(publisher.PublisherId == this.booksTable[i].PublisherId && this.booksTable[i].StandAlone == false) {
         bookIds.push(this.booksTable[i].BookId);
       }
     }
