@@ -1,0 +1,21 @@
+.series {
+    padding-top: 2rem;
+}
+.series-summary {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: center;
+}
+.series-info-container {
+    max-width: 100%;
+    width: 100vw;
+    height: fit-content;
+    margin-top:15px;
+}
+.series-info-container h1 {
+    display: flex;
+    font-size: 3rem;
+    margin: 0;
+    padding-top: 1rem;
+    justify-content: center;
+}
