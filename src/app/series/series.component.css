@@ -13,17 +13,19 @@
   margin-bottom: 1rem;
 }
 /*link to author page*/
-.link-container {
-  justify-content: center;
-}
 .author-link {
   display: inline-block;
   font-size: 18px;
   font-weight: bold;
-  text-decoration: none;
   color: white;
 }
 .author-link:hover {
+  color: aqua;
+  cursor: pointer;
+}
+
+/*link to series page*/
+.series-link:hover {
   color: aqua;
   cursor: pointer;
 }

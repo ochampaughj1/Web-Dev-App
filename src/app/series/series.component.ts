@@ -24,7 +24,6 @@ export class SeriesComponent implements OnInit{
   @Input() series: any;
   //display variables for page types
   @Input() displayType: any;
-  type = 'authorPage';
 
   //variables to hold passed data
   booksList: Book[] = [];
@@ -46,5 +45,17 @@ export class SeriesComponent implements OnInit{
       }
     };
     this.router.navigate(["author-page"], navigationExtras);
+  }
+
+  //routes to author-page when an author is clicked
+  seriesClick(series: Series, author: Author) {
+    let authorData = btoa(JSON.stringify(author));
+    let seriesData = btoa(JSON.stringify(series));
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        authorData, seriesData
+      }
+    };
+    this.router.navigate(["series-page"], navigationExtras);
   }
 }

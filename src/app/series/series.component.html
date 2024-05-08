@@ -1,7 +1,7 @@
 <!--container holding all series contents-->
 <div class="container">
   <!--series header for author page-->
-  <div *ngIf="displayType == type; else elseBlock">
+  <div *ngIf="displayType == 'author-page' || displayType == 'series-page'; else elseBlock">
     <div class="heading author-page">
       <h1>{{series.Title}}</h1>
     </div>
@@ -9,9 +9,9 @@
   <!--series header if not on author page-->
   <ng-template #elseBlock>
     <div class="heading">
-      <h1>{{series.Title}}</h1>
+      <div><h1 class="series-link" (click)="seriesClick(series, author)">{{series.Title}}</h1></div>
       <!--Link to author-page-->
-      <div id="authorLink" class="link-container"><p class="author-link"  (click)="authorClick(author)">{{author.AuthorName}}</p></div>
+      <div><p class="author-link"  (click)="authorClick(author)">{{author.AuthorName}}</p></div>
     </div>
   </ng-template>
 
