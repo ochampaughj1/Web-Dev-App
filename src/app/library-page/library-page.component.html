@@ -32,7 +32,7 @@
   <!--Displays list of series based on filters-->
 <div *ngIf="filterActive == true; else elseBlock">
   <div *ngFor="let currentSeries of filteredSeriesList;">
-    <app-series [series]=currentSeries></app-series>
+    <app-series [series]=currentSeries [displayType]="'library-page'"></app-series>
   </div>
   <div *ngIf="filteredAuthorList.length > 0"><h1>Stand Alone Books</h1></div>
   <div *ngFor="let currentAuthor of filteredAuthorList">
@@ -42,7 +42,7 @@
 <!--Displays all series-->
 <ng-template #elseBlock>
   <div *ngFor="let currentSeries of seriesList;">
-    <app-series [series]=currentSeries></app-series>
+    <app-series [series]=currentSeries [displayType]="'library-page'"></app-series>
   </div>
   <h1>Stand Alone Books</h1>
   <div *ngFor="let currentAuthor of standAloneBookAuthors">

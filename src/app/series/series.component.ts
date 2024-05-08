@@ -48,12 +48,11 @@ export class SeriesComponent implements OnInit{
   }
 
   //routes to author-page when an author is clicked
-  seriesClick(series: Series, author: Author) {
-    let authorData = btoa(JSON.stringify(author));
+  seriesClick(series: Series) {
     let seriesData = btoa(JSON.stringify(series));
     let navigationExtras: NavigationExtras = {
       queryParams: {
-        authorData, seriesData
+        seriesData
       }
     };
     this.router.navigate(["series-page"], navigationExtras);
