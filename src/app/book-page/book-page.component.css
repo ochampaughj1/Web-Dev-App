@@ -1,7 +1,7 @@
 /*container holding all book page elements*/
 .book-container {
     display: flex;
-    height: 400px;
+    min-height: 400px;
     width: 100%;
     margin:15px;
 }
@@ -40,4 +40,5 @@
   }
 .summary {
     white-space: pre-wrap;
+    padding-right: 1rem;
 }

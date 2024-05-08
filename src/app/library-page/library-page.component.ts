@@ -17,7 +17,7 @@ import { StandAloneComponent } from '../stand-alone/stand-alone.component';
   styleUrl: './library-page.component.css',
   providers: [DataService]
 })
-export class LibraryPageComponent {
+export class LibraryPageComponent{
   //initializes data service to get data
   constructor(private dataService: DataService) {}
 
@@ -197,25 +197,24 @@ export class LibraryPageComponent {
         }
       }
     }
-    this.filteredSeriesList = filteredSeries;
-    //this.sortArray(filteredSeries);
+    this.filteredSeriesList = this.sortArray(filteredSeries);
   }
 
-  //sorts array by author name alphabetically
-  sortArray(series: Series[]) {
-    var author1, author2;
+  //sorts array by title alphabetically
+  sortArray(series: Series[]) : Series[]{
+    var s1, s2;
     for(let i = 0; i < series.length; i++) {
       for(let j = 0; j < series.length; j++) {
-        author1 = this.dataService.getAuthorBySeries(series[i]);
-        author2 = this.dataService.getAuthorBySeries(series[j]);
-        if(author1.AuthorName < author2.AuthorName) {
+        s1 = series[i];
+        s2 = series[j];
+        if(s1.Title < s2.Title) {
           var temp = series[i];
           series[i] = series[j];
           series[j] = temp;
         }
       }
     }
-    this.filteredSeriesList = series;
+    return series;
   }
 
   //updates stand alones by selected filters
