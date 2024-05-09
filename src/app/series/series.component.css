@@ -25,6 +25,9 @@
 }
 
 /*link to series page*/
+.series-link {
+  display: inline-block;
+}
 .series-link:hover {
   color: aqua;
   cursor: pointer;
