@@ -22,7 +22,7 @@ export class LibraryPageComponent{
   constructor(private dataService: DataService) {}
 
   //master lists for books, authors, series, and stand alones from data service
-  seriesList: Series[] = this.dataService.getSeriesList();
+  seriesList: Series[] = this.sortArray(this.dataService.getSeriesList().slice());
   booksList: Book[] = this.dataService.getBookList();
   authorList: Author[] = this.dataService.getAuthorsList();
   genreList: Genre[] = this.dataService.getGenreList();
