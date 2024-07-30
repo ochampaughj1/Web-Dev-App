@@ -30,7 +30,6 @@ export class AuthorPageComponent implements OnInit{
 
     //gets author data from router link
     ngOnInit(): void {
-        scrollTo(0,0);
         this.route.queryParams.subscribe(params => {
             let standAloneBookIds: number[] = [];
             let seriesBookIds: number[] = [];

@@ -8,6 +8,7 @@ import { Author } from '../models/Author';
 import { Genre } from '../models/Genre';
 import { Publisher } from '../models/Publisher';
 import { StandAloneComponent } from '../stand-alone/stand-alone.component';
+import { SortService } from '../data/SortService';
 
 @Component({
   selector: 'app-series-page',
@@ -15,18 +16,18 @@ import { StandAloneComponent } from '../stand-alone/stand-alone.component';
   imports: [StandAloneComponent, SeriesComponent, NgFor, NgIf],
   templateUrl: './library-page.component.html',
   styleUrl: './library-page.component.css',
-  providers: [DataService]
+  providers: [DataService, SortService]
 })
 export class LibraryPageComponent{
   //initializes data service to get data
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private sortService: SortService) {}
 
   //master lists for books, authors, series, and stand alones from data service
-  seriesList: Series[] = this.sortArray(this.dataService.getSeriesList().slice());
+  seriesList: Series[] = this.sortService.sortSeries(this.dataService.getSeriesList().slice());
   booksList: Book[] = this.dataService.getBookList();
-  authorList: Author[] = this.dataService.getAuthorsList();
-  genreList: Genre[] = this.dataService.getGenreList();
-  publisherList: Publisher[] = this.dataService.getPublisherList();
+  authorList: Author[] = this.sortService.sortAuthors(this.dataService.getAuthorsList().slice());
+  genreList: Genre[] = this.sortService.sortGenres(this.dataService.getGenreList().slice());
+  publisherList: Publisher[] = this.sortService.sortPublishers(this.dataService.getPublisherList().slice());
   standAloneBooks: Book[] = this.dataService.getStandAloneBooks();
   standAloneBookAuthors: Author[] = this.dataService.getStandAloneBookAuthors(this.standAloneBooks);
 
@@ -42,6 +43,7 @@ export class LibraryPageComponent{
   //Updates active filters
   applyFilters(selection: Author | Genre | Publisher) {
     this.checkFilterActive();
+    window.scrollTo(0,0);
     if(!this.activeFilters.includes(selection)) {
       this.activeFilters.push(selection);
       if(selection instanceof Author) { this.filterTypeCount[0]++; }
@@ -197,24 +199,7 @@ export class LibraryPageComponent{
         }
       }
     }
-    this.filteredSeriesList = this.sortArray(filteredSeries);
-  }
-
-  //sorts array by title alphabetically
-  sortArray(series: Series[]) : Series[]{
-    var s1, s2;
-    for(let i = 0; i < series.length; i++) {
-      for(let j = 0; j < series.length; j++) {
-        s1 = series[i];
-        s2 = series[j];
-        if(s1.Title < s2.Title) {
-          var temp = series[i];
-          series[i] = series[j];
-          series[j] = temp;
-        }
-      }
-    }
-    return series;
+    this.filteredSeriesList = this.sortService.sortSeries(filteredSeries);
   }
 
   //updates stand alones by selected filters
