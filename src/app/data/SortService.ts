@@ -1,13 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Series } from "../models/Series";
-import { Book } from "../models/Book";
 import { Author } from "../models/Author";
-import { BookAuthor } from "../models/BookAuthor";
 import { Genre } from "../models/Genre";
-import { BookGenre } from "../models/BookGenre";
 import { Publisher } from "../models/Publisher";
-import { SeriesBook } from "../models/SeriesBook";
-import { AuthorPageComponent } from "../author-page/author-page.component";
 
 
 @Injectable({providedIn: 'root'})
