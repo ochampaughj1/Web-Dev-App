@@ -29,10 +29,6 @@
       </ul>
   </div>
 </div>
-
-<!--DIALOG TESTING-->
-<button (click)="openDialog()">dialog test button</button>
-
   <!--Displays list of series based on filters-->
 <div *ngIf="filterActive == true; else elseBlock">
   <div *ngFor="let currentSeries of filteredSeriesList;">
