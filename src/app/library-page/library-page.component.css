@@ -10,6 +10,14 @@
     cursor: pointer;
     margin-top: 5px;
 }
+.login-btn-container {
+    display:block;
+    padding-bottom:3rem;
+}
+.login-btn {
+    float:right;
+    clear:both
+}
 .btn-border {
     border-bottom: none;
     border-radius: 5px 5px 0 0;
