@@ -1,15 +1,15 @@
 <!--container holding all stand alone contents-->
 <div class="container">
-    <!--Header-->
-    <div class="heading">
-        <!--Link to author-page-->
-        <div class="link-container"><p class="author-link" (click)="authorClick(standAloneAuthor)">{{standAloneAuthor.AuthorName}}</p></div>
-    </div>
-  
-    <!--Stand Alone Books-->
-    <div class="gallery-container">
-      <div *ngFor="let currentBook of booksList">
-        <app-book [book]=currentBook></app-book>
-      </div>
+  <!--Header-->
+  <div class="heading">
+      <!--Link to author-page-->
+      <div class="link-container"><p class="author-link" (click)="authorClick(standAloneAuthor)">{{standAloneAuthor.AuthorName}}</p></div>
+  </div>
+
+  <!--Stand Alone Books-->
+  <div class="gallery-container">
+    <div *ngFor="let currentBook of booksList">
+      <app-book [book]=currentBook></app-book>
     </div>
   </div>
+</div>

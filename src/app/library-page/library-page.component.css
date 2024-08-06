@@ -66,3 +66,7 @@ h1 {
     margin-bottom: 0;
     font-size: 50px;
 }
+
+.standAloneTitle {
+    padding-top:3rem;
+}

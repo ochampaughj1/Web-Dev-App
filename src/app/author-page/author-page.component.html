@@ -12,7 +12,7 @@
             <p>For more information about {{author.AuthorName}}'s books, click the link above to visit their personal website</p>
             <!--stand alone & series galleries-->
             <div *ngFor="let currentSeries of seriesList;">
-                <app-series [series]=currentSeries [displayType]='"author-page"'></app-series>
+                <app-series class="seriesContainer" [series]=currentSeries [displayType]='"author-page"'></app-series>
             </div>
             <div class="gallery-container">
                 <div *ngFor="let currentBook of standAlones;">

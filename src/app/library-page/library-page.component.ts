@@ -9,6 +9,8 @@ import { Genre } from '../models/Genre';
 import { Publisher } from '../models/Publisher';
 import { StandAloneComponent } from '../stand-alone/stand-alone.component';
 import { SortService } from '../data/SortService';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog'
+import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-series-page',
@@ -21,7 +23,17 @@ import { SortService } from '../data/SortService';
 export class LibraryPageComponent{
   //initializes data service to get data
   constructor(private dataService: DataService, private sortService: SortService,
+    private dialog: MatDialog
   ) {}
+
+  //DIALOG TESTING
+  //CURRENTLY CENTERS IN FRAME
+  openDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    this.dialog.open(LoginDialogComponent, dialogConfig)
+  }
+
   //master lists for books, authors, series, and stand alones from data service
   seriesList: Series[] = this.sortService.sortSeries(this.dataService.getSeriesList().slice());
   booksList: Book[] = this.dataService.getBookList();

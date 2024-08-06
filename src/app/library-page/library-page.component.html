@@ -29,6 +29,10 @@
       </ul>
   </div>
 </div>
+<!--DIALOG TESTING-->
+<button (click)="openDialog()">test</button>
+
+
   <!--Displays list of series based on filters-->
 <div *ngIf="filterActive == true; else elseBlock">
   <div *ngFor="let currentSeries of filteredSeriesList;">
@@ -44,7 +48,7 @@
   <div *ngFor="let currentSeries of seriesList;">
     <app-series [series]=currentSeries [displayType]="'library-page'"></app-series>
   </div>
-  <h1>Stand Alone Books</h1>
+  <h1 class="standAloneTitle">Stand Alone Books</h1>
   <div *ngFor="let currentAuthor of standAloneBookAuthors">
     <app-stand-alone [standAloneAuthor]="currentAuthor" [standAloneBooksList]="standAloneBooks"></app-stand-alone>
   </div>

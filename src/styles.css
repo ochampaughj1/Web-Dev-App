@@ -12,3 +12,11 @@ body::-webkit-scrollbar-thumb {
     background: grey;
     border-radius: 5px;
 }
+
+/* DIALOG CSS*/
+.mdc-dialog__surface {
+    background-color: #373f4bf2 !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

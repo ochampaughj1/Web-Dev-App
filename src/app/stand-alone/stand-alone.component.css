@@ -8,6 +8,10 @@
   font-size: 50px;
   margin-bottom: 0;
 }
+
+.container {
+  padding-top: 1.25rem;
+}
 /*link to stand alone author*/
 .link-container {
   justify-content: center;
