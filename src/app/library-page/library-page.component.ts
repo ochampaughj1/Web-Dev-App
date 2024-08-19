@@ -20,6 +20,7 @@ import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
   styleUrl: './library-page.component.css',
   providers: [DataService, SortService]
 })
+
 export class LibraryPageComponent{
   //initializes data service to get data
   constructor(private dataService: DataService, private sortService: SortService,
@@ -27,11 +28,12 @@ export class LibraryPageComponent{
   ) {}
 
   //DIALOG TESTING
-  //CURRENTLY CENTERS IN FRAME
-  openDialog() {
+  openLoginDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    this.dialog.open(LoginDialogComponent, dialogConfig)
+    dialogConfig.height = '400px';
+    dialogConfig.width = '600px';
+    this.dialog.open(LoginDialogComponent, dialogConfig);
   }
 
   //master lists for books, authors, series, and stand alones from data service

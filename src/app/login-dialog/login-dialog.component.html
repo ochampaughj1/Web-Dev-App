@@ -1,1 +1,20 @@
-<p>login-dialog works!</p>
+<div mat-dialog-content *ngIf="newUser == false; else elseBlock">
+  <h2 mat-dialog-title class="heading">Login</h2>
+  <div class="login-info">
+    <input type="text" placeholder="Username">
+    <input type="text" placeholder="Password">
+    <button class="switch-button" (click)="displaySwitch()">switch display</button>
+  </div>
+</div>
+<ng-template #elseBlock>
+  <div mat-dialog-content>
+    <h2 mat-dialog-title class="heading">Sign Up</h2>
+    <div class="login-info">
+      <input type="text" placeholder="Name">
+      <input type="text" placeholder="Username">
+      <input type="text" placeholder="Password">
+      <input type="text" placeholder="Confirm Password">
+      <button class="switch-button" (click)="displaySwitch()">switch display</button>
+    </div>
+  </div>
+</ng-template>

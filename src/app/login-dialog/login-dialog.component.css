@@ -1,0 +1,14 @@
+.heading {
+    display:grid;
+    text-align: center;
+}
+
+.login-info {
+    display: grid;
+    place-content: center;
+    gap: .5rem;
+}
+
+.switch-button {
+    display: block;
+}
