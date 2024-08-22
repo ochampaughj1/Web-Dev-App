@@ -9,6 +9,7 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 5px;
+    margin-left: 5px;
 }
 .login-btn-container {
     display:block;
@@ -16,7 +17,8 @@
 }
 .login-btn {
     float:right;
-    clear:both
+    clear:both;
+    margin-right: 5px;
 }
 .btn-border {
     border-bottom: none;
