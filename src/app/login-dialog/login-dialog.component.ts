@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent,} from '@angular/material/dialog';
+import { AccountService } from '../data/AccountService';
 
 @Component({
   selector: 'app-login-dialog',
@@ -10,12 +11,34 @@ import { MatDialog, MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent,} from '@a
   styleUrl: './login-dialog.component.css'
 })
 export class LoginDialogComponent {
-  constructor() {}
+  constructor(private accountService: AccountService) {}
 
   newUser: boolean = false;
 
+  //switches between login and sign up views
   displaySwitch() {
     if(this.newUser == false) { this.newUser = true;}
     else { this.newUser = false; }
+  }
+
+  LoginClick() {
+    //get values of input textboxes
+    var username = ((document.getElementById("lusername") as HTMLInputElement).value);
+    var password = ((document.getElementById("lpassword") as HTMLInputElement).value);
+    if(this.accountService.CheckForAccount(username, password)) {
+      alert("Success!");
+    }
+    else {
+      alert("Incorrect Credentials!");
+    }
+    
+  }
+
+  SignUpClick() {
+    //get values of input textboxes//get values of input textboxes
+    var name = ((document.getElementById("name") as HTMLInputElement).value);
+    var username = ((document.getElementById("username") as HTMLInputElement).value);
+    var password = ((document.getElementById("password") as HTMLInputElement).value);
+    var confirm = ((document.getElementById("confirm") as HTMLInputElement).value);
   }
 }

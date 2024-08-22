@@ -27,7 +27,7 @@ export class LibraryPageComponent{
     private dialog: MatDialog
   ) {}
 
-  //DIALOG TESTING
+  //Login dialog box for login/sign up
   openLoginDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;

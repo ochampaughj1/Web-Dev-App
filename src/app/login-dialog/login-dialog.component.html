@@ -1,20 +1,26 @@
+<!--Login to Sign Up Button-->
+<button class="switch-button" (click)="displaySwitch()">switch display</button>
+
+<!--Login Form-->
 <div mat-dialog-content *ngIf="newUser == false; else elseBlock">
   <h2 mat-dialog-title class="heading">Login</h2>
   <div class="login-info">
-    <input type="text" placeholder="Username">
-    <input type="text" placeholder="Password">
-    <button class="switch-button" (click)="displaySwitch()">switch display</button>
+    <input id="lusername" type="text" placeholder="Username">
+    <input id="lpassword" type="password" placeholder="Password">
+    <button (click)="LoginClick()">Login</button>
   </div>
 </div>
+
+<!--Sign Up Form-->
 <ng-template #elseBlock>
   <div mat-dialog-content>
     <h2 mat-dialog-title class="heading">Sign Up</h2>
     <div class="login-info">
-      <input type="text" placeholder="Name">
-      <input type="text" placeholder="Username">
-      <input type="text" placeholder="Password">
-      <input type="text" placeholder="Confirm Password">
-      <button class="switch-button" (click)="displaySwitch()">switch display</button>
+      <input id="name" type="text" placeholder="Name">
+      <input id="username" type="text" placeholder="Username">
+      <input id="password" type="password" placeholder="Password">
+      <input id="confirm" type="password" placeholder="Confirm Password">
+      <button (click)="SignUpClick()">Sign Up</button>
     </div>
   </div>
 </ng-template>

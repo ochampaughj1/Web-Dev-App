@@ -1,5 +1,5 @@
 .heading {
-    display:grid;
+    display:block;
     text-align: center;
 }
 
@@ -11,4 +11,6 @@
 
 .switch-button {
     display: block;
+    width: fit-content;
+    position: absolute;
 }
