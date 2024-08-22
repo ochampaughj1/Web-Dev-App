@@ -25,13 +25,12 @@ export class LoginDialogComponent {
     //get values of input textboxes
     var username = ((document.getElementById("lusername") as HTMLInputElement).value);
     var password = ((document.getElementById("lpassword") as HTMLInputElement).value);
-    if(this.accountService.CheckForAccount(username, password)) {
+    if(this.accountService.CheckLogin(username, password)) {
       alert("Success!");
     }
     else {
       alert("Incorrect Credentials!");
     }
-    
   }
 
   SignUpClick() {
@@ -40,5 +39,14 @@ export class LoginDialogComponent {
     var username = ((document.getElementById("username") as HTMLInputElement).value);
     var password = ((document.getElementById("password") as HTMLInputElement).value);
     var confirm = ((document.getElementById("confirm") as HTMLInputElement).value);
+
+    //STILL NEEDS EDGE CASE IMPLEMENTATION CHECKS
+    //need to add in white space checking and move password confirmation to account service
+    var result = this.accountService.CheckSignUp(name, username, password, confirm); 
+    //alerts for faulty sign in 
+    if(result == "cannot have blank fields") { alert("cannot have blank fields"); }
+    else if(result == "!matching") { alert("passwords dont match"); }
+    else if(result == "exists") { alert("username already in use"); }
+    else if(result == "create") { alert("create user"); }
   }
 }

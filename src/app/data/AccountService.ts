@@ -28,12 +28,23 @@ export class AccountService {
     accountsTable: Account[] = [temp1, temp2];
   
     //checks if the account attempting to login exists
-    CheckForAccount(username: string, password: string) : boolean {
+    CheckLogin(username: string, password: string) : boolean {
         for(let i = 0; i < this.accountsTable.length; i++) {
             if(username.toLowerCase() == this.accountsTable[i].Username && password == this.accountsTable[i].Password) {
-                return (true);
+                return true;
             }
         }
         return false;
+    }
+
+    //checks if account exists with given username and checks password
+    CheckSignUp(name: string, username: string, password: string, confirm: string) : string {
+        if(name == "" || username == "" || password == "" || confirm == "") { return "cannot have blank fields"; }
+        if(password != confirm) { return "!matching"; }
+
+        for(let i = 0; i < this.accountsTable.length; i++) {
+            if(username.toLowerCase() == this.accountsTable[i].Username) { return "exists"; }
+        }
+        return "create";
     }
 }
