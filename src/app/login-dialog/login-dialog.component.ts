@@ -1,7 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { MatDialog, MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent,} from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent, MatDialogConfig, MatDialogRef,} from '@angular/material/dialog';
 import { AccountService } from '../data/AccountService';
+import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-login-dialog',
@@ -11,7 +12,7 @@ import { AccountService } from '../data/AccountService';
   styleUrl: './login-dialog.component.css'
 })
 export class LoginDialogComponent {
-  constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService, public dialogRef: MatDialogRef<LoginDialogComponent>) {}
 
   newUser: boolean = false;
 
@@ -30,6 +31,7 @@ export class LoginDialogComponent {
       //NEED TO PASS TO MAIN FORM FOR VIEW CHANGING
       var currentUser = this.accountService.LoginUser(username, password);
       alert(currentUser.Name);
+      this.dialogRef.close(currentUser);
     }
     else {
       alert("Incorrect Credentials!");
@@ -53,6 +55,12 @@ export class LoginDialogComponent {
     else if(result == "create") { 
       //NEED TO PASS TO MAIN FORM FOR VIEW CHANGING
       var currentUser = this.accountService.CreateAccount(name, username, password);
+      
+      for(let i = 0; i < this.accountService.accountsTable.length; i++) {
+        alert(this.accountService.accountsTable[i].Name);
+        //closes dialog window
+        this.dialogRef.close(currentUser);
+      }
     }
   }
 }

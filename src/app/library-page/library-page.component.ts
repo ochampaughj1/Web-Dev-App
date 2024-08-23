@@ -11,6 +11,7 @@ import { StandAloneComponent } from '../stand-alone/stand-alone.component';
 import { SortService } from '../data/SortService';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog'
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+import { Account } from '../models/Account';
 
 @Component({
   selector: 'app-series-page',
@@ -23,18 +24,7 @@ import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 
 export class LibraryPageComponent{
   //initializes data service to get data
-  constructor(private dataService: DataService, private sortService: SortService,
-    private dialog: MatDialog
-  ) {}
-
-  //Login dialog box for login/sign up
-  openLoginDialog() {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.height = '400px';
-    dialogConfig.width = '600px';
-    this.dialog.open(LoginDialogComponent, dialogConfig);
-  }
+  constructor(private dataService: DataService, private sortService: SortService, private dialog: MatDialog) {}
 
   //master lists for books, authors, series, and stand alones from data service
   seriesList: Series[] = this.sortService.sortSeries(this.dataService.getSeriesList().slice());
@@ -44,7 +34,7 @@ export class LibraryPageComponent{
   publisherList: Publisher[] = this.sortService.sortPublishers(this.dataService.getPublisherList().slice());
   standAloneBooks: Book[] = this.dataService.getStandAloneBooks();
   standAloneBookAuthors: Author[] = this.dataService.getStandAloneBookAuthors(this.standAloneBooks);
-
+  
   //filter items lists for updating page
   filteredSeriesList: Series[] = [];
   filteredStandAloneList: Book[] = [];
@@ -53,7 +43,26 @@ export class LibraryPageComponent{
   activeFilters: (Author | Genre | Publisher)[] = [];
   activeGenres: Genre[] = [];
   filterTypeCount: number[] = [0,0,0];
-
+  
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  //account for viewing 
+  user: Account = new Account("", "", "", []);
+  //Login dialog box for login/sign up
+  openLoginDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.height = '400px';
+    dialogConfig.width = '600px';
+    let dialogRef = this.dialog.open(LoginDialogComponent, dialogConfig);
+    
+    //receives account that is logged in
+    dialogRef.afterClosed().subscribe(data => {
+      this.user = data;
+    })
+  }
+  
+  
+  ///////////////////////////////////////////////////////////////////////////////////////////
   //Updates active filters
   applyFilters(selection: Author | Genre | Publisher) {
     this.checkFilterActive();

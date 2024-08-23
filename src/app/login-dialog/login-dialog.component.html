@@ -17,9 +17,9 @@
     <h2 mat-dialog-title class="heading">Sign Up</h2>
     <div class="login-info">
       <input id="name" type="text" placeholder="Name" (keydown.enter)="SignUpClick()">
-      <input id="username" type="text" placeholder="Username">
-      <input id="password" type="password" placeholder="Password">
-      <input id="confirm" type="password" placeholder="Confirm Password">
+      <input id="username" type="text" placeholder="Username" (keydown.enter)="SignUpClick()">
+      <input id="password" type="password" placeholder="Password" (keydown.enter)="SignUpClick()">
+      <input id="confirm" type="password" placeholder="Confirm Password" (keydown.enter)="SignUpClick()">
       <button (click)="SignUpClick()">Sign Up</button>
     </div>
   </div>
