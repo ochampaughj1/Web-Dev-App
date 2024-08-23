@@ -21,18 +21,22 @@ export class LoginDialogComponent {
     else { this.newUser = false; }
   }
 
+  //Checks if user exists and if so logs them in
   LoginClick() {
     //get values of input textboxes
     var username = ((document.getElementById("lusername") as HTMLInputElement).value);
     var password = ((document.getElementById("lpassword") as HTMLInputElement).value);
     if(this.accountService.CheckLogin(username, password)) {
-      alert("Success!");
+      //NEED TO PASS TO MAIN FORM FOR VIEW CHANGING
+      var currentUser = this.accountService.LoginUser(username, password);
+      alert(currentUser.Name);
     }
     else {
       alert("Incorrect Credentials!");
     }
   }
 
+  //checks if credentials meet requirements and signs them up
   SignUpClick() {
     //get values of input textboxes//get values of input textboxes
     var name = ((document.getElementById("name") as HTMLInputElement).value);
@@ -41,12 +45,14 @@ export class LoginDialogComponent {
     var confirm = ((document.getElementById("confirm") as HTMLInputElement).value);
 
     //STILL NEEDS EDGE CASE IMPLEMENTATION CHECKS
-    //need to add in white space checking and move password confirmation to account service
     var result = this.accountService.CheckSignUp(name, username, password, confirm); 
-    //alerts for faulty sign in 
+    //error check alerts for faulty sign in 
     if(result == "cannot have blank fields") { alert("cannot have blank fields"); }
     else if(result == "!matching") { alert("passwords dont match"); }
     else if(result == "exists") { alert("username already in use"); }
-    else if(result == "create") { alert("create user"); }
+    else if(result == "create") { 
+      //NEED TO PASS TO MAIN FORM FOR VIEW CHANGING
+      var currentUser = this.accountService.CreateAccount(name, username, password);
+    }
   }
 }

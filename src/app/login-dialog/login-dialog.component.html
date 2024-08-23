@@ -5,8 +5,8 @@
 <div mat-dialog-content *ngIf="newUser == false; else elseBlock">
   <h2 mat-dialog-title class="heading">Login</h2>
   <div class="login-info">
-    <input id="lusername" type="text" placeholder="Username">
-    <input id="lpassword" type="password" placeholder="Password">
+    <input id="lusername" type="text" placeholder="Username" (keydown.enter)="LoginClick()">
+    <input id="lpassword" type="password" placeholder="Password" (keydown.enter)="LoginClick()">
     <button (click)="LoginClick()">Login</button>
   </div>
 </div>
@@ -16,7 +16,7 @@
   <div mat-dialog-content>
     <h2 mat-dialog-title class="heading">Sign Up</h2>
     <div class="login-info">
-      <input id="name" type="text" placeholder="Name">
+      <input id="name" type="text" placeholder="Name" (keydown.enter)="SignUpClick()">
       <input id="username" type="text" placeholder="Username">
       <input id="password" type="password" placeholder="Password">
       <input id="confirm" type="password" placeholder="Confirm Password">

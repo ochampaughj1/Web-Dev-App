@@ -47,4 +47,22 @@ export class AccountService {
         }
         return "create";
     }
+
+    //creates new account from sign up form information
+    CreateAccount(name: string, username: string, password: string) : Account {
+        const newAcc = new Account(name, username, password, []);
+        this.accountsTable.push(newAcc);
+        return newAcc;
+    }
+
+    //logs in user to their account
+    LoginUser(username: string, password: string) : Account{
+        var user = new Account("", "", "", []);
+        for(let i = 0; i < this.accountsTable.length; i++) {
+            if(this.accountsTable[i].Username == username && this.accountsTable[i].Password == password) {
+                user = this.accountsTable[i];
+            }
+        }
+        return user;
+    }
 }
