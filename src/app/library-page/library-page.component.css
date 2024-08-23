@@ -13,10 +13,10 @@
 }
 .login-btn-container {
     display:block;
-    padding-bottom:3rem;
+    position: absolute;
+    right: 0;
 }
 .login-btn {
-    float:right;
     clear:both;
     margin-right: 5px;
 }
@@ -40,7 +40,6 @@
     background-color: #161b22f2;
     min-width: 200px;
     z-index: 1;
-    padding-right: 5px;
 }
 
 .dropdown-content li {
@@ -49,7 +48,6 @@
     text-decoration: underline;
     margin-top: 1rem;
 }
-
 /*displays hidden dropdown content (uses JS script to toggle class)*/
 .show {
     display:block;
@@ -79,4 +77,9 @@ h1 {
 
 .standAloneTitle {
     padding-top:3rem;
+}
+
+/*creates spacing between elements NEEDS FIXED*/
+.spacer {
+    margin-top: 50px;
 }

@@ -35,7 +35,8 @@
   <button (click)="openLoginDialog()" class="dropbtn login-btn">login</button>
 </div>
 
-
+<!--temporary spacer to keep right button from effecting divs-->
+<div class="spacer"></div>
   <!--Displays list of series based on filters-->
 <div *ngIf="filterActive == true; else elseBlock">
   <div *ngFor="let currentSeries of filteredSeriesList;">
