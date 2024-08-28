@@ -29,6 +29,8 @@ export class SeriesComponent implements OnInit{
   booksList: Book[] = [];
   seriesList: Series[] = this.dataService.getSeriesList();
   author: any;
+
+  passedUser: any; 
   
   //sets booklist and author
   ngOnInit(): void {

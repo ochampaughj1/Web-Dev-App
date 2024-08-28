@@ -24,6 +24,8 @@ const temp2 = new Account("Marcel", "williamsm1", "asdf", [series2, b1, b2, b3, 
 @Injectable({providedIn: 'root'})
 export class AccountService {
 
+    LoggedInUser: any;
+
     //table of all user accounts
     accountsTable: Account[] = [temp1, temp2];
   

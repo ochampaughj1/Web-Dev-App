@@ -36,8 +36,9 @@
 </div>
 
 <!--temporary spacer to keep right button from effecting divs-->
-<div class="spacer"></div>
-  <!--Displays list of series based on filters-->
+<div class="spacer">{{this.loggedIn}} {{this.user.Name}}</div>
+ 
+<!--Displays list of series based on filters-->
 <div *ngIf="filterActive == true; else elseBlock">
   <div *ngFor="let currentSeries of filteredSeriesList;">
     <app-series [series]=currentSeries [displayType]="'library-page'"></app-series>

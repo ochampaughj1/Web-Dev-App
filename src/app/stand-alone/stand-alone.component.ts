@@ -20,7 +20,7 @@ export class StandAloneComponent implements OnInit{
 
   //variables to hold stand alone info
   @Input() standAloneAuthor: any;
-  @Input() standAloneBooksList:any;
+  @Input() standAloneBooksList: any;
 
   booksList: Book[] = [];
 

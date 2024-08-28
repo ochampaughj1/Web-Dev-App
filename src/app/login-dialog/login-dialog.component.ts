@@ -60,6 +60,7 @@ export class LoginDialogComponent {
         alert(this.accountService.accountsTable[i].Name);
         //closes dialog window
         this.dialogRef.close(currentUser);
+        sessionStorage.setItem('user', JSON.stringify(currentUser));
       }
     }
   }

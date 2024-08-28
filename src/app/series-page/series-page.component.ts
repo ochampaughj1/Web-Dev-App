@@ -5,6 +5,8 @@ import { Book } from '../models/Book';
 import { SeriesComponent } from '../series/series.component';
 import { DataService } from '../data/DataService';
 import { NgFor } from '@angular/common';
+import { Account } from '../models/Account';
+import { AccountService } from '../data/AccountService';
 
 @Component({
   selector: 'app-series-page',
@@ -14,11 +16,12 @@ import { NgFor } from '@angular/common';
   styleUrl: './series-page.component.css'
 })
 export class SeriesPageComponent implements OnInit{
-  constructor(private dataService: DataService, private route: ActivatedRoute){}
+  constructor(private dataService: DataService, private route: ActivatedRoute, private accountService: AccountService){}
 
   author: any;
   series: any;
   books: Book[] = [];
+  passedUser: Account = new Account("", "", "", []);
 
   //gets author data from router link
   ngOnInit(): void {
@@ -28,5 +31,6 @@ export class SeriesPageComponent implements OnInit{
       });
       this.author = this.dataService.getAuthorBySeries(this.series);
       this.books = this.dataService.getBooksBySeries(this.series);
-  }
+      this.passedUser = this.accountService.LoggedInUser;
+    }
 }

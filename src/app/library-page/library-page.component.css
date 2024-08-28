@@ -82,4 +82,8 @@ h1 {
 /*creates spacing between elements NEEDS FIXED*/
 .spacer {
     margin-top: 50px;
+    text-align: center;
+    color: red;
+    font-size: 25px;
+    margin-bottom: 20px;
 }

@@ -12,6 +12,7 @@ import { SortService } from '../data/SortService';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog'
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { Account } from '../models/Account';
+import { AccountService } from '../data/AccountService';
 
 @Component({
   selector: 'app-series-page',
@@ -24,7 +25,7 @@ import { Account } from '../models/Account';
 
 export class LibraryPageComponent{
   //initializes data service to get data
-  constructor(private dataService: DataService, private sortService: SortService, private dialog: MatDialog) {}
+  constructor(private dataService: DataService, private sortService: SortService, private dialog: MatDialog, private accountService: AccountService) {}
 
   //master lists for books, authors, series, and stand alones from data service
   seriesList: Series[] = this.sortService.sortSeries(this.dataService.getSeriesList().slice());
@@ -47,6 +48,8 @@ export class LibraryPageComponent{
   ///////////////////////////////////////////////////////////////////////////////////////////////
   //account for viewing 
   user: Account = new Account("", "", "", []);
+  loggedIn: boolean = false;
+
   //Login dialog box for login/sign up
   openLoginDialog() {
     const dialogConfig = new MatDialogConfig();
@@ -58,6 +61,11 @@ export class LibraryPageComponent{
     //receives account that is logged in
     dialogRef.afterClosed().subscribe(data => {
       this.user = data;
+      if(this.user.Username != "") {
+        this.loggedIn = true;
+      }
+      //trying to keep user logged in
+      this.accountService.LoggedInUser = data;
     })
   }
   
