@@ -2,10 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BookComponent } from '../book/book.component';
 import { NgFor } from '@angular/common';
 import { NavigationExtras } from '@angular/router';
-import { Author } from '../models/Author';
+import { Author } from '../../models/Author';
 import { Router } from '@angular/router';
-import { DataService } from '../data/DataService';
-import { Book } from '../models/Book';
+import { DataService } from '../../Services/DataService';
+import { Book } from '../../models/Book';
 
 @Component({
     selector: 'app-stand-alone',

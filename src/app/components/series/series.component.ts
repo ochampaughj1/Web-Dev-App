@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Series } from '../models/Series';
-import { Book } from '../models/Book';
+import { Series } from '../../models/Series';
+import { Book } from '../../models/Book';
 import { NgFor , NgIf} from '@angular/common';
 import { BookComponent } from "../book/book.component";
 import { Router, RouterLink, RouterLinkActive, NavigationExtras } from '@angular/router';
-import { DataService } from '../data/DataService';
-import { Author } from '../models/Author';
+import { DataService } from '../../Services/DataService';
+import { Author } from '../../models/Author';
 
 @Component({
     selector: 'app-series',

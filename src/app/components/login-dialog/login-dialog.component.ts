@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent, MatDialogConfig, MatDialogRef,} from '@angular/material/dialog';
-import { AccountService } from '../data/AccountService';
+import { AccountService } from '../../Services/AccountService';
 import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
@@ -60,7 +60,6 @@ export class LoginDialogComponent {
         alert(this.accountService.accountsTable[i].Name);
         //closes dialog window
         this.dialogRef.close(currentUser);
-        sessionStorage.setItem('user', JSON.stringify(currentUser));
       }
     }
   }

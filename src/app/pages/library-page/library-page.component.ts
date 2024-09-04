@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { SeriesComponent } from '../series/series.component';
-import { DataService } from '../data/DataService';
-import { Series } from '../models/Series';
-import { Book } from '../models/Book';
+import { SeriesComponent } from '../../components/series/series.component';
+import { DataService } from '../../Services/DataService';
+import { Series } from '../../models/Series';
+import { Book } from '../../models/Book';
 import { NgFor, NgIf } from '@angular/common';
-import { Author } from '../models/Author';
-import { Genre } from '../models/Genre';
-import { Publisher } from '../models/Publisher';
-import { StandAloneComponent } from '../stand-alone/stand-alone.component';
-import { SortService } from '../data/SortService';
+import { Author } from '../../models/Author';
+import { Genre } from '../../models/Genre';
+import { Publisher } from '../../models/Publisher';
+import { StandAloneComponent } from '../../components/stand-alone/stand-alone.component';
+import { SortService } from '../../Services/SortService';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog'
-import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
-import { Account } from '../models/Account';
-import { AccountService } from '../data/AccountService';
+import { LoginDialogComponent } from '../../components/login-dialog/login-dialog.component';
+import { Account } from '../../models/Account';
+import { AccountService } from '../../Services/AccountService';
 
 @Component({
   selector: 'app-series-page',
@@ -68,7 +68,13 @@ export class LibraryPageComponent{
       this.accountService.LoggedInUser = data;
     })
   }
-  
+
+  //Displays all books in users wishlist (used for checking)
+  Wishlist() {
+    for(let i = 0; i < this.user.WishList.length; i++) {
+      alert(this.user.WishList[i].Title);
+    }
+  }
   
   ///////////////////////////////////////////////////////////////////////////////////////////
   //Updates active filters

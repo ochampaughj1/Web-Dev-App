@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Author } from '../models/Author';
-import { Book } from '../models/Book';
-import { SeriesComponent } from '../series/series.component';
-import { DataService } from '../data/DataService';
+import { Author } from '../../models/Author';
+import { Book } from '../../models/Book';
+import { SeriesComponent } from '../../components/series/series.component';
+import { DataService } from '../../Services/DataService';
 import { NgFor } from '@angular/common';
-import { Account } from '../models/Account';
-import { AccountService } from '../data/AccountService';
+import { Account } from '../../models/Account';
+import { AccountService } from '../../Services/AccountService';
 
 @Component({
   selector: 'app-series-page',

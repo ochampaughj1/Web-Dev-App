@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { SeriesComponent } from "../series/series.component";
-import { DataService } from '../data/DataService';
-import { Series } from '../models/Series';
+import { SeriesComponent } from "../../components/series/series.component";
+import { DataService } from '../../Services/DataService';
+import { Series } from '../../models/Series';
 import { ActivatedRoute } from '@angular/router';
-import { Author } from '../models/Author';
+import { Author } from '../../models/Author';
 import { NgFor, NgIf } from '@angular/common';
-import { Book } from '../models/Book';
-import { StandAloneComponent } from "../stand-alone/stand-alone.component";
-import { BookComponent } from "../book/book.component";
+import { Book } from '../../models/Book';
+import { StandAloneComponent } from "../../components/stand-alone/stand-alone.component";
+import { BookComponent } from "../../components/book/book.component";
 
 @Component({
     selector: 'app-author-page',

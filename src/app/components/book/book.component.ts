@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Book } from '../models/Book';
+import { Book } from '../../models/Book';
 import { Router, NavigationExtras} from '@angular/router';
+import { AccountService } from '../../Services/AccountService';
 
 @Component({
   selector: 'app-book',
@@ -11,13 +12,15 @@ import { Router, NavigationExtras} from '@angular/router';
 })
 export class BookComponent {
   //initializes router to use for book page
-  constructor(private router: Router){}
+  constructor(private router: Router, private accountService: AccountService){}
 
   //book passed down from series component
   @Input() book: any;
 
   //variable to hold book information to pass along route
   data: any;
+
+  userAccount: any;
 
   //navigates to book-page and passes the selected book
   bookClick(): void {
@@ -28,5 +31,12 @@ export class BookComponent {
       }
     };
     this.router.navigate(["book-page"], navigationExtras);
+  }
+
+  //Adds book to accounts wishlist
+  AddToWishlist() {
+    this.userAccount = this.accountService.LoggedInUser;
+    this.userAccount.WishList.push(this.book);
+    event?.stopPropagation();
   }
 }

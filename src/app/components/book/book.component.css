@@ -20,3 +20,11 @@
   flex: 2;
   translate: 0 -15px;
 }
+
+
+/***Button Overlay**/
+.overlay-button {
+  position: absolute;
+  left: 3%;
+  top: 80%;
+}
