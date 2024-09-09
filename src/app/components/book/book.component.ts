@@ -36,7 +36,9 @@ export class BookComponent {
   //Adds book to accounts wishlist
   AddToWishlist() {
     this.userAccount = this.accountService.LoggedInUser;
-    this.userAccount.WishList.push(this.book);
+    if(!this.userAccount.WishList.includes(this.book)) {
+      this.userAccount.WishList.push(this.book);
+    }
     event?.stopPropagation();
   }
 }

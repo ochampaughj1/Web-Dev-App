@@ -52,18 +52,18 @@ export class SortService {
   
   //sorts series alphabetically based on series title
   sortSeries(series: Series[]) : Series[]{
-      var s1, s2;
-      for(let i = 0; i < series.length; i++) {
-        for(let j = 0; j < series.length; j++) {
-          s1 = series[i];
-          s2 = series[j];
-          if(s1.Title < s2.Title) {
-            var temp = series[i];
-            series[i] = series[j];
-            series[j] = temp;
-          }
+    var s1, s2;
+    for(let i = 0; i < series.length; i++) {
+      for(let j = 0; j < series.length; j++) {
+        s1 = series[i];
+        s2 = series[j];
+        if(s1.Title < s2.Title) {
+          var temp = series[i];
+          series[i] = series[j];
+          series[j] = temp;
         }
       }
-      return series;
     }
+    return series;
+  }
 }
