@@ -30,15 +30,18 @@
   </div>
 </div>
 
+<!--
+////Wishlist and Account functionality for testing to be added
 <button (click)="Wishlist()">WishList</button>
 
-<!--Login Form Button-->
+Login Form Button
 <div class="login-btn-container">
   <button (click)="openLoginDialog()" class="dropbtn login-btn">login</button>
 </div>
+-->
 
 <!--temporary spacer to keep right button from effecting divs-->
-<div class="spacer">{{this.loggedIn}} {{this.user.Name}}</div>
+<div class="spacer"><!--{{this.loggedIn}} {{this.user.Name}}--></div>
  
 <!--Displays list of series based on filters-->
 <div *ngIf="filterActive == true; else elseBlock">
