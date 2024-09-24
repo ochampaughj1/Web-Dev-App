@@ -34,11 +34,11 @@
 .author-link {
     text-decoration: none;
     color: white;
-  }
-  .author-link:hover {
+}
+.author-link:hover {
     color: aqua;
     cursor: pointer;
-  }
+}
 .summary {
     white-space: pre-wrap;
     padding-right: 1rem;

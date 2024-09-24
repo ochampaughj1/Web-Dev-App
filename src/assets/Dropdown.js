@@ -24,3 +24,8 @@ window.addEventListener('click', function(event){
     }
   }
 });
+
+//Click events for resume display
+function ShowFunction() {
+  document.getElementById("resume").classList.toggle("show");
+}
