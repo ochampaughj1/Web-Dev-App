@@ -1,0 +1,9 @@
+{
+  "routes": [
+    "/author-page",
+    "/book-page",
+    "/home-page",
+    "/library-page",
+    "/series-page"
+  ]
+}
